@@ -1,1 +1,101 @@
 docker exec -it dyno_sam bash
+
+---- DepthAnythingV2
+git clone https://github.com/DepthAnything/Depth-Anything-V2.git
+cd Depth-Anything-V2
+
+python -m venv venv
+source venv/bin/activate
+
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+pip install -r requirements.txt
+
+mkdir checkpoints
+cd checkpoints
+wget https://huggingface.co/depth-anything/Depth-Anything-V2/resolve/main/checkpoints/depth_anything_v2_vitl.pth
+
+
+python run.py \
+  --encoder vitl \
+  --img-path data/frames
+  --outdir data/depth
+  --pred-only
+
+---- DepthAnythingV3
+conda create -n da3 python=3.12 -y
+conda activate da3
+python -m pip install -U pip setuptools wheel
+python -m pip install awesome-depth-anything-3
+
+-
+cat << 'EOF' > depth-anything
+#!/usr/bin/env python3
+import argparse, os, glob, torch
+import numpy as np
+from PIL import Image
+from depth_anything_3.api import DepthAnything3
+
+parser = argparse.ArgumentParser(description="Depth Anything 3: frames folder -> depth PNGs")
+parser.add_argument("input", help="folder with frames (e.g. data/frames)")
+parser.add_argument("-o", "--out", default="data/depth", help="output folder")
+parser.add_argument("--model", default="depth-anything/DA3-SMALL", help="HF model id")
+parser.add_argument("--device", default="auto", choices=["auto","cuda","cpu"], help="where to run")
+parser.add_argument("--amp", action="store_true", help="use mixed precision on CUDA (saves VRAM)")
+args = parser.parse_args()
+
+os.environ.setdefault("PYTORCH_ALLOC_CONF", "expandable_segments:True")
+
+os.makedirs(args.out, exist_ok=True)
+paths = sorted([p for p in glob.glob(os.path.join(args.input, "*")) if os.path.isfile(p)])
+
+if args.device == "auto":
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+else:
+    device = args.device
+
+model = DepthAnything3.from_pretrained(args.model).to(device)
+model.eval()
+
+use_amp = args.amp and device == "cuda"
+autocast = torch.cuda.amp.autocast if device == "cuda" else torch.cpu.amp.autocast
+
+with torch.no_grad():
+    for p in paths:
+        # run 1 frame at a time to minimize VRAM
+        if use_amp:
+            with autocast(dtype=torch.float16):
+                pred = model.inference([p])
+        else:
+            pred = model.inference([p])
+
+        d = pred.depth[0]
+        d = (d - d.min()) / (d.max() - d.min() + 1e-8)
+        out = os.path.join(args.out, os.path.basename(p))
+        Image.fromarray((d * 255).astype("uint8")).save(out)
+
+        if device == "cuda":
+            torch.cuda.empty_cache()
+
+print(f"Saved depth maps to {args.out}")
+EOF
+
+chmod +x depth-anything
+
+-
+
+./depth-anything data/frames --model depth-anything/DA3-SMALL
+
+
+
+
+
+
+----
+
+ros2 launch dynosam_ros dyno_sam_launch.py \
+    params_path:=/root/params \
+    dataset_path:=/root/data \
+    v:=1\
+    --data_provider_type=3 \
+    --output_path=/root/results
