@@ -27,7 +27,8 @@ python run.py \
   --encoder vitb \
   --img-path data/frames \
   --outdir data/depth \
-  --pred-only
+  --pred-only \
+  --grayscale
 
 
 ---- DepthAnythingV3
