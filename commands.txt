@@ -1,19 +1,23 @@
 docker exec -it dyno_sam bash
 
 ---- DepthAnythingV2
+conda create -n depth-anything python=3.11 -y
+conda activate depth-anything
+python --version
+
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia -y
+
+
 git clone https://github.com/DepthAnything/Depth-Anything-V2.git
 cd Depth-Anything-V2
 
-python -m venv venv
-source venv/bin/activate
-
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-
+pip install -U pip
 pip install -r requirements.txt
 
-mkdir checkpoints
-cd checkpoints
-wget https://huggingface.co/depth-anything/Depth-Anything-V2/resolve/main/checkpoints/depth_anything_v2_vitl.pth
+mkdir -p checkpoints
+curl -L -o checkpoints/depth_anything_v2_vitb.pth \
+  https://huggingface.co/depth-anything/Depth-Anything-V2-Base/resolve/main/depth_anything_v2_vitb.pth
+
 
 
 python run.py \
@@ -21,6 +25,13 @@ python run.py \
   --img-path data/frames
   --outdir data/depth
   --pred-only
+
+  python run.py \
+  --encoder vitb \
+  --img-path data/frames \
+  --outdir data/depth \
+  --ckpt checkpoints/depth_anything_v2_vitb.pth
+
 
 ---- DepthAnythingV3
 conda create -n da3 python=3.12 -y
