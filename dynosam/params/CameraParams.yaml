@@ -12,11 +12,12 @@ T_BS:
 # Camera specific definitions.
 rate_hz: 20
 resolution:
-  width: 1242
-  height: 375
+  width: 1920
+  height: 1080
 
 camera_model: pinhole
-intrinsics: [721.5377,  721.5377, 609.5593, 172.8540] #fu, fv, cu, cv
+intrinsics: [1200, 1200, 960, 540] #fu, fv, cu, cv
+# intrinsics: [1333, 1333, 960, 540]
 distortion_model: radial_tangential
 distortion_coefficients: [0.0, 0.0, 0.0, 0.0]
 
