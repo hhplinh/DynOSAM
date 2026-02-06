@@ -91,7 +91,7 @@ EOF
 
 chmod +x depth-anything
 
--
+--
 
 ./depth-anything data/frames --model depth-anything/DA3-SMALL
 
