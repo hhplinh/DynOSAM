@@ -16,26 +16,18 @@ pip install -r requirements.txt
 
 conda remove -y pytorch torchvision torchaudio pytorch-cuda
 
-# install pip CUDA build (CUDA 12.4 wheels work fine with your 12.8 driver)
-pip install --index-url https://download.pytorch.org/whl/cu124 torch torchvision torchaudio
+pip3 install torch torchvision torchaudio
 
 mkdir -p checkpoints
 curl -L -o checkpoints/depth_anything_v2_vitb.pth \
   https://huggingface.co/depth-anything/Depth-Anything-V2-Base/resolve/main/depth_anything_v2_vitb.pth
 
 
-
 python run.py \
-  --encoder vitl \
-  --img-path data/frames
-  --outdir data/depth
-  --pred-only
-
-  python run.py \
   --encoder vitb \
   --img-path data/frames \
   --outdir data/depth \
-  --ckpt checkpoints/depth_anything_v2_vitb.pth
+  --pred-only
 
 
 ---- DepthAnythingV3
