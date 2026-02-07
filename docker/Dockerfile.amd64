@@ -23,6 +23,7 @@ RUN apt-get update \
     python3-pip \
     openssh-client \
     software-properties-common \
+    tree \
     nano \
     vim \
     clang-format \
