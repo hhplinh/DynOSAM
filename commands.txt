@@ -180,6 +180,26 @@ ros2 launch dynosam_ros dyno_sam_online_rgbd_launch.py \
 
 ---
 
+docker run -it --gpus all --net=host \
+-v ~/fish_data:/root/data \
+-v ~/results:/root/results \
+dyno_sam bash
+
+# First, source the ROS setup (standard practice inside these containers)
+source /opt/ros/humble/setup.bash  # or foxy/galactic depending on the image
+source install/setup.bash
+
+# Run the inference
+ros2 launch dynosam_ros dyno_sam_online_rgbd_launch.py \
+    online:=true \
+    input_image_mode:=1 \
+    dataset_path:=/root/data \
+    params_path:=/home/user/dev_ws/src/core/dynosam/params/ \
+    output_path:=/root/results \
+    name:=test
+
+---
+
 ---- DepthAnythingV2
 conda create -n depth-anything python=3.11 -y
 conda activate depth-anything

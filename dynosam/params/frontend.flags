@@ -30,3 +30,4 @@
 
 --shrink_row=0
 --shrink_col=0
+--use_object_detection=false

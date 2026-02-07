@@ -2,7 +2,13 @@
 
 ### EDIT THIS TO WHEREVER YOU'RE STORING YOU DATA ###
 
-LOCAL_DATA_FOLDER="/home/linh/Downloads/8_DynOSAM/dynosam_pkg/data"
+# LOCAL_DATA_FOLDER="/home/linh/Downloads/8_DynOSAM/dynosam_pkg/data"
+# LOCAL_RESULTS_FOLDER="/home/linh/Downloads/8_DynOSAM/dynosam_pkg/results"
+# LOCAL_DYNO_SAM_FOLDER="/home/linh/Downloads/8_DynOSAM/dynosam_pkg/DynoSAM"
+# LOCAL_THIRD_PARTY_DYNO_SAM_FOLDER="/home/linh/Downloads/8_DynOSAM/dynosam_pkg/extras"
+
+
+LOCAL_DATA_FOLDER="/home/linh/Downloads/8_DynOSAM/dynosam_pkg/fish_data"
 LOCAL_RESULTS_FOLDER="/home/linh/Downloads/8_DynOSAM/dynosam_pkg/results"
 LOCAL_DYNO_SAM_FOLDER="/home/linh/Downloads/8_DynOSAM/dynosam_pkg/DynoSAM"
 LOCAL_THIRD_PARTY_DYNO_SAM_FOLDER="/home/linh/Downloads/8_DynOSAM/dynosam_pkg/extras"
