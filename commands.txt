@@ -1,3 +1,13 @@
+cd dynosam_pkg/DynoSAM/docker &&
+./build_docker_amd64.sh //
+
+
+./create_container_amd64.sh //
+
+cd /home/user/dev_w &&
+export MAKEFLAGS="-j10" && clear && colcon build
+
+----
 docker exec -it dyno_sam bash
 
 
