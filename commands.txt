@@ -17,8 +17,9 @@ ros2 pkg create rgbd_publisher_pkg \
   --build-type ament_python \
   --dependencies rclpy sensor_msgs cv_bridge
 
+cd ..
 
-nano rgbd_publisher_pkg/setup.py
+nano src rgbd_publisher_pkg/setup.py
 
 --
 
@@ -44,8 +45,7 @@ setup(
     },
 )
 --
-
-nano src/rgbd_publisher_pkg/rgbd_publisher_pkg
+nano src/rgbd_publisher_pkg/rgbd_publisher_pkg/rgbd_publisher.py
 
 --
 import rclpy
@@ -139,7 +139,7 @@ if __name__ == '__main__':
 
 --
 
-cd ..
+# in home/user/dev_ws
 colcon build
 
 source install/setup.bash
