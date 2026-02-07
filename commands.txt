@@ -103,11 +103,39 @@ source install/setup.bash
 ros2 launch dynosam_ros dyno_sam_online_rgbd_launch.py
 
 
-----
+---- ros package
+cd /home/user/dev_ws/src
 
+ros2 pkg create rgbd_publisher_pkg \
+  --build-type ament_python \
+  --dependencies rclpy sensor_msgs cv_bridge
+
+
+
+
+----
 ros2 launch dynosam_ros dyno_sam_launch.py \
-    params_path:=/root/params \
+  params_path:=/home/user/dev_ws/src/core/dynosam/params/ \
+  dataset_path:=/root/data \
+  v:=1 \
+  data_provider_type:=3 \
+  output_path:=/root/results
+
+
+
+
+ros2 launch dynosam_ros dyno_sam_online_rgbd_launch.py \
     dataset_path:=/root/data \
-    v:=1\
-    --data_provider_type=3 \
-    --output_path=/root/results
+    output_path:=/root/results \
+    name:=test \
+    data_provider_type:=3 \
+    run_pipeline:=true
+
+
+ros2 launch dynosam_ros dyno_sam_online_rgbd_launch.py \
+    online:=true \
+    input_image_mode:=1 \
+    dataset_path:=/root/data \
+    params_path:=/home/user/dev_ws/src/core/dynosam/params/ \
+    output_path:=/root/results \
+    name:=test

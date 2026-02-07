@@ -10,7 +10,7 @@ T_BS:
     0.0, 0.0, 0.0, 1.0]
 
 # Camera specific definitions.
-rate_hz: 20
+rate_hz: 60
 resolution:
   width: 1920
   height: 1080
