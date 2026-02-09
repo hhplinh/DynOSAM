@@ -4,12 +4,12 @@ set -e  # Exit immediately if a command fails
 echo ">>> [HOST] Starting Docker Build process..."
 
 # Navigate to docker directory
-if [ -d "dynosam_pkg/DynoSAM/docker" ]; then
-    cd dynosam_pkg/DynoSAM/docker
-elif [ -d "DynoSAM/docker" ]; then
-    cd DynoSAM/docker
+if [ -d "dynosam_pkg/docker" ]; then
+    cd dynosam_pkg/docker
+elif [ -d "docker" ]; then
+    cd docker
 else
-    echo "Error: Could not find DynoSAM/docker directory. Run this from your workspace root."
+    echo "Error: Could not find docker directory. Run this from your workspace root."
     exit 1
 fi
 
