@@ -3,37 +3,36 @@ FROM rwthika/ros2-torch:kilted-desktop-full-torch2.5.0
 
 LABEL maintainer="Jesse Morris <jesse.morris@sydney.edu.au>"
 
-# To avoid tzdata asking for geographic location...
 ENV DEBIAN_FRONTEND=noninteractive
 
 # -----------------------------------------------------------------------------
-# [CRITICAL CONFIG] Target Blackwell Architecture
-# 10.0 = B100/B200 (Data Center)
-# 12.0 = RTX 5090/5080 (Consumer)
+# [CRITICAL CONFIG] Target Blackwell Architecture (RTX 50-series = 12.0)
 # -----------------------------------------------------------------------------
-ENV TORCH_CUDA_ARCH_LIST="10.0 12.0"
+ENV TORCH_CUDA_ARCH_LIST="12.0"
 ENV CUDA_HOME="/usr/local/cuda"
+# Force use of Host Driver libraries and CUDA 12.x compatibility
+ENV LD_LIBRARY_PATH=/usr/local/cuda/compat:/usr/lib/x86_64-linux-gnu:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 # -----------------------------------------------------------------------------
-# [CRITICAL FIX] 1. Upgrade TensorRT for Blackwell
-# FIXED: Changed repo from 'ubuntu2204' to 'ubuntu2404' to match base image
+# [CRITICAL FIX] 1. Align CUDA Repo and TensorRT for Blackwell
+# Using the specific 24.04 repo to ensure we get TensorRT 10.x compatible with SM 120
 # -----------------------------------------------------------------------------
 RUN apt-get update && apt-get remove -y libnvinfer* tensorrt && \
     apt-get install -y software-properties-common wget && \
-    # UPDATED URL BELOW: ubuntu2204 -> ubuntu2404
     wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb && \
     dpkg -i cuda-keyring_1.1-1_all.deb && \
     apt-get update && \
-    apt-get install -y tensorrt python3-libnvinfer && \
+    # Install TensorRT and the compatibility libraries for newer drivers
+    apt-get install -y tensorrt python3-libnvinfer cuda-compat-12-6 && \
     rm -rf /var/lib/apt/lists/*
 
 # -----------------------------------------------------------------------------
 # Standard Dependencies
 # -----------------------------------------------------------------------------
-RUN apt-get update && apt-get upgrade -y --no-install-recommends apt-utils
-RUN apt-get update && apt-get install -y git cmake build-essential pkg-config xvfb
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get upgrade -y --no-install-recommends apt-utils && \
+    apt-get install -y git cmake build-essential pkg-config xvfb \
     python3-pip openssh-client tree nano vim clang-format \
+    libopenmpi-dev openmpi-bin \
     && pip3 install black pre-commit packaging ninja \
     && rm -rf /var/lib/apt/lists/*
 
@@ -41,7 +40,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get update && apt-get install -y \
       ros-kilted-ros2cli-common-extensions \
       ros-kilted-vision-opencv \
-      nlohmann-json3-dev libpng++-dev libgflags2.2 libgflags-dev libgoogle-glog-dev \
+      nlohmann-json3-dev libpng++-dev libgflags-dev libgoogle-glog-dev \
       libboost-all-dev libtbb-dev libsuitesparse-dev python3-dev python3-setuptools
 
 RUN python3 -m pip install pylatex evo setuptools pre-commit scipy argcomplete matplotlib
@@ -65,15 +64,13 @@ RUN cd opencv/build && \
       cmake -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_INSTALL_PREFIX=/usr/local \
       -D BUILD_opencv_python=OFF \
-      -D BUILD_opencv_python2=OFF \
       -D BUILD_opencv_python3=ON \
       -D WITH_CUDA=ON \
       -D WITH_CUDNN=ON \
       -D INSTALL_CUDA_LIBS=OFF \
-      # FIXED: OpenCV prefers CUDA_ARCH_BIN over CMAKE_CUDA_ARCHITECTURES
-      # Added 10.0 (B200) and 12.0 (RTX 50-series)
-      -D CUDA_ARCH_BIN="10.0,12.0" \
-      -D CUDA_ARCH_PTX="" \
+      # Blackwell Target
+      -D CUDA_ARCH_BIN="12.0" \
+      -D CUDA_ARCH_PTX="12.0" \
       -D OPENCV_DNN_CUDA=ON \
       -D ENABLE_FAST_MATH=ON \
       -D CUDA_FAST_MATH=ON \
@@ -90,9 +87,8 @@ RUN git clone https://github.com/MIT-SPARK/config_utilities.git && \
       cd config_utilities/config_utilities && mkdir build && \
       cd build && cmake .. && make -j$(nproc) install
 
-# Install GTSAM
 RUN git clone https://github.com/borglab/gtsam.git && \
-    cd gtsam && git fetch && git checkout tags/4.2.0 && mkdir build && \
+    cd gtsam && git checkout tags/4.2.0 && mkdir build && \
     cd build && \
     cmake -DCMAKE_INSTALL_PREFIX=/usr/local \
     -DGTSAM_USE_SYSTEM_EIGEN=ON \
@@ -102,20 +98,17 @@ RUN git clone https://github.com/borglab/gtsam.git && \
     -DGTSAM_TANGENT_PREINTEGRATION=OFF .. && \
     make -j$(nproc) install
 
-# Install Open_GV
 RUN git clone https://github.com/MIT-SPARK/opengv && \
     cd opengv && mkdir build && \
     cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local .. && \
     make -j$(nproc) install
 
-RUN mkdir -p /home/user/dev_ws/src/core && \
-    mkdir -p /home/user/dev_ws/src/third_parties && \
-    mkdir -p /home/user/upstream_ws/src
+RUN mkdir -p /home/user/dev_ws/src/core /home/user/dev_ws/src/third_parties /home/user/upstream_ws/src
 
 SHELL ["/bin/bash", "-c"]
 
-# Sourcing this inside Docker build only affects the current RUN instruction
-# but keeping it here as you had it.
-RUN source /opt/ros/kilted/setup.bash
+# Final environment cleanup to ensure runtime works
+ENV NVIDIA_VISIBLE_DEVICES all
+ENV NVIDIA_DRIVER_CAPABILITIES compute,utility,graphics
 
 WORKDIR /home/user/dev_ws

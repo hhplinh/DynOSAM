@@ -108,6 +108,7 @@ if "$USE_NVIDIA"; then
     #     --name=$CONTAINER_NAME \
     #     $CONTAINER_IMAGE_NAME "$@"
     docker run \
+        --runtime=nvidia \
         --privileged \
         --gpus all \
         -i -d \
