@@ -6,7 +6,6 @@ cd dynosam_pkg/DynoSAM/docker &&
 
 docker exec -it dyno_sam bash
 
-cd /home/user/dev_w &&
 export MAKEFLAGS="-j10" && clear && colcon build
 
 
@@ -19,7 +18,7 @@ ros2 pkg create rgbd_publisher_pkg \
 
 cd ..
 
-nano src rgbd_publisher_pkg/setup.py
+nano src/rgbd_publisher_pkg/setup.py
 
 --
 
@@ -161,7 +160,7 @@ if __name__ == '__main__':
 --
 
 # in home/user/dev_ws
-colcon build
+colcon build --packages-select rgbd_publisher_pkg
 
 source install/setup.bash
 
@@ -181,7 +180,7 @@ ros2 launch dynosam_ros dyno_sam_launch.py \
   output_path:=/root/results
 
 
-
+-------------------------
 
 ros2 launch dynosam_ros dyno_sam_online_rgbd_launch.py \
     dataset_path:=/root/data \
