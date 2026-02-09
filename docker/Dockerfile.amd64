@@ -1,18 +1,27 @@
 # syntax=docker/dockerfile:latest
 FROM rwthika/ros2-torch:kilted-desktop-full-torch2.5.0
 
-MAINTAINER Jesse Morris "jesse.morris@sydney.edu.au"
+LABEL maintainer="Jesse Morris <jesse.morris@sydney.edu.au>"
 
 # To avoid tzdata asking for geographic location...
 ENV DEBIAN_FRONTEND=noninteractive
 
 # -----------------------------------------------------------------------------
-# [CRITICAL FIX] 1. Upgrade TensorRT for Blackwell (SM 120) Support
-# The base image has old TensorRT. We must purge it and install the latest.
+# [CRITICAL CONFIG] Target Blackwell Architecture
+# 10.0 = B100/B200 (Data Center)
+# 12.0 = RTX 5090/5080 (Consumer)
+# -----------------------------------------------------------------------------
+ENV TORCH_CUDA_ARCH_LIST="10.0 12.0"
+ENV CUDA_HOME="/usr/local/cuda"
+
+# -----------------------------------------------------------------------------
+# [CRITICAL FIX] 1. Upgrade TensorRT for Blackwell
+# FIXED: Changed repo from 'ubuntu2204' to 'ubuntu2404' to match base image
 # -----------------------------------------------------------------------------
 RUN apt-get update && apt-get remove -y libnvinfer* tensorrt && \
     apt-get install -y software-properties-common wget && \
-    wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb && \
+    # UPDATED URL BELOW: ubuntu2204 -> ubuntu2404
+    wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb && \
     dpkg -i cuda-keyring_1.1-1_all.deb && \
     apt-get update && \
     apt-get install -y tensorrt python3-libnvinfer && \
@@ -25,7 +34,7 @@ RUN apt-get update && apt-get upgrade -y --no-install-recommends apt-utils
 RUN apt-get update && apt-get install -y git cmake build-essential pkg-config xvfb
 RUN apt-get update && apt-get install -y \
     python3-pip openssh-client tree nano vim clang-format \
-    && pip3 install black pre-commit \
+    && pip3 install black pre-commit packaging ninja \
     && rm -rf /var/lib/apt/lists/*
 
 # ROS installs
@@ -61,15 +70,17 @@ RUN cd opencv/build && \
       -D WITH_CUDA=ON \
       -D WITH_CUDNN=ON \
       -D INSTALL_CUDA_LIBS=OFF \
-      # CHANGED FROM "75" TO "90;120" (Supports Hopper H100 & Blackwell)
-      -D CMAKE_CUDA_ARCHITECTURES="90;120" \ 
+      # FIXED: OpenCV prefers CUDA_ARCH_BIN over CMAKE_CUDA_ARCHITECTURES
+      # Added 10.0 (B200) and 12.0 (RTX 50-series)
+      -D CUDA_ARCH_BIN="10.0,12.0" \
+      -D CUDA_ARCH_PTX="" \
       -D OPENCV_DNN_CUDA=ON \
       -D ENABLE_FAST_MATH=ON \
       -D CUDA_FAST_MATH=ON \
       -D WITH_CUFFT=ON \
       -D WITH_CUBLAS=ON \
       -D WITH_TBB=ON \
-      -DOPENCV_EXTRA_MODULES_PATH=/root/opencv_contrib/modules .. && \
+      -D OPENCV_EXTRA_MODULES_PATH=/root/opencv_contrib/modules .. && \
       make -j$(nproc) install
 
 # -----------------------------------------------------------------------------
@@ -103,6 +114,8 @@ RUN mkdir -p /home/user/dev_ws/src/core && \
 
 SHELL ["/bin/bash", "-c"]
 
+# Sourcing this inside Docker build only affects the current RUN instruction
+# but keeping it here as you had it.
 RUN source /opt/ros/kilted/setup.bash
 
 WORKDIR /home/user/dev_ws
