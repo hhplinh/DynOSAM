@@ -1,32 +1,30 @@
 # syntax=docker/dockerfile:latest
-# FROM osrf/ros:humble-desktop-full
-# torch contains ROS 2, NVIDIA CUDA, NVIDIA TensorRT, PyTorch
 FROM rwthika/ros2-torch:kilted-desktop-full-torch2.5.0
 
-
 MAINTAINER Jesse Morris "jesse.morris@sydney.edu.au"
-
 
 # To avoid tzdata asking for geographic location...
 ENV DEBIAN_FRONTEND=noninteractive
 
-#Install build dependencies
+# -----------------------------------------------------------------------------
+# [CRITICAL FIX] 1. Upgrade TensorRT for Blackwell (SM 120) Support
+# The base image has old TensorRT. We must purge it and install the latest.
+# -----------------------------------------------------------------------------
+RUN apt-get update && apt-get remove -y libnvinfer* tensorrt && \
+    apt-get install -y software-properties-common wget && \
+    wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb && \
+    dpkg -i cuda-keyring_1.1-1_all.deb && \
+    apt-get update && \
+    apt-get install -y tensorrt python3-libnvinfer && \
+    rm -rf /var/lib/apt/lists/*
+
+# -----------------------------------------------------------------------------
+# Standard Dependencies
+# -----------------------------------------------------------------------------
 RUN apt-get update && apt-get upgrade -y --no-install-recommends apt-utils
-RUN apt-get update && apt-get install -y git cmake build-essential pkg-config
-# Install xvfb to provide a display to container for GUI realted testing.
-RUN apt-get update && apt-get install -y xvfb
-
-
-
-RUN apt-get update \
-    && apt-get install -y \
-    python3-pip \
-    openssh-client \
-    software-properties-common \
-    tree \
-    nano \
-    vim \
-    clang-format \
+RUN apt-get update && apt-get install -y git cmake build-essential pkg-config xvfb
+RUN apt-get update && apt-get install -y \
+    python3-pip openssh-client tree nano vim clang-format \
     && pip3 install black pre-commit \
     && rm -rf /var/lib/apt/lists/*
 
@@ -34,45 +32,25 @@ RUN apt-get update \
 RUN apt-get update && apt-get install -y \
       ros-kilted-ros2cli-common-extensions \
       ros-kilted-vision-opencv \
-      nlohmann-json3-dev
+      nlohmann-json3-dev libpng++-dev libgflags2.2 libgflags-dev libgoogle-glog-dev \
+      libboost-all-dev libtbb-dev libsuitesparse-dev python3-dev python3-setuptools
 
-# other deps
-RUN apt-get install libpng++-dev
-
-RUN python3 -m pip install pylatex evo setuptools pre-commit scipy argcomplete black pre-commit
-
-# Install glog, gflags
-RUN apt-get update && apt-get install -y libgflags2.2 libgflags-dev libgoogle-glog-dev
-
-# Install xvfb to provide a display to container for GUI realted testing.
-RUN apt-get update && apt-get install -y xvfb python3-dev python3-setuptools
-
-RUN pip3 install setuptools pre-commit scipy matplotlib argcomplete
-
-# install CSparse
-RUN DEBIAN_FRONTEND=noninteractive apt install -y libsuitesparse-dev
-
-# Parallelism C++ for CPU
-RUN apt-get update && apt-get install -y libboost-all-dev libtbb-dev
+RUN python3 -m pip install pylatex evo setuptools pre-commit scipy argcomplete matplotlib
 
 WORKDIR /root/
 
-
-
-# Install OpenCV for Ubuntu
+# -----------------------------------------------------------------------------
+# [CRITICAL FIX] 2. Build OpenCV for SM 120 (Blackwell)
+# -----------------------------------------------------------------------------
 RUN apt-get update && apt-get install -y \
-      unzip \
-      libjpeg-dev libpng-dev libpng++-dev libtiff-dev libgtk2.0-dev \
+      unzip libjpeg-dev libpng-dev libpng++-dev libtiff-dev libgtk2.0-dev \
       libatlas-base-dev gfortran
 
-RUN git clone https://github.com/opencv/opencv.git
-RUN cd opencv && \
-      git checkout tags/4.10.0 && \
-      mkdir build
+RUN git clone https://github.com/opencv/opencv.git && \
+      cd opencv && git checkout tags/4.10.0 && mkdir build
 
-RUN git clone https://github.com/opencv/opencv_contrib.git
-RUN cd opencv_contrib && \
-      git checkout tags/4.10.0
+RUN git clone https://github.com/opencv/opencv_contrib.git && \
+      cd opencv_contrib && git checkout tags/4.10.0
 
 RUN cd opencv/build && \
       cmake -DCMAKE_BUILD_TYPE=Release \
@@ -83,7 +61,8 @@ RUN cd opencv/build && \
       -D WITH_CUDA=ON \
       -D WITH_CUDNN=ON \
       -D INSTALL_CUDA_LIBS=OFF \
-      -D CMAKE_CUDA_ARCHITECTURES="75" \
+      # CHANGED FROM "75" TO "90;120" (Supports Hopper H100 & Blackwell)
+      -D CMAKE_CUDA_ARCHITECTURES="90;120" \ 
       -D OPENCV_DNN_CUDA=ON \
       -D ENABLE_FAST_MATH=ON \
       -D CUDA_FAST_MATH=ON \
@@ -93,41 +72,34 @@ RUN cd opencv/build && \
       -DOPENCV_EXTRA_MODULES_PATH=/root/opencv_contrib/modules .. && \
       make -j$(nproc) install
 
-
-RUN git clone https://github.com/MIT-SPARK/config_utilities.git
-RUN cd config_utilities/config_utilities && mkdir build && \
-      cd build && \
-      cmake .. && make -j$(nproc) install
-
-
+# -----------------------------------------------------------------------------
+# Remaining Installs (Config Utils, GTSAM, OpenGV)
+# -----------------------------------------------------------------------------
+RUN git clone https://github.com/MIT-SPARK/config_utilities.git && \
+      cd config_utilities/config_utilities && mkdir build && \
+      cd build && cmake .. && make -j$(nproc) install
 
 # Install GTSAM
-RUN git clone https://github.com/borglab/gtsam.git
-RUN cd gtsam && \
-    git fetch && \
-    git checkout tags/4.2.0 && \
-    mkdir build && \
+RUN git clone https://github.com/borglab/gtsam.git && \
+    cd gtsam && git fetch && git checkout tags/4.2.0 && mkdir build && \
     cd build && \
     cmake -DCMAKE_INSTALL_PREFIX=/usr/local \
     -DGTSAM_USE_SYSTEM_EIGEN=ON \
-    -DGTSAM_BUILD_TESTS=OFF -DGTSAM_BUILD_EXAMPLES_ALWAYS=OFF -DCMAKE_BUILD_TYPE=Release -DGTSAM_BUILD_UNSTABLE=ON -DGTSAM_POSE3_EXPMAP=ON -DGTSAM_ROT3_EXPMAP=ON -DGTSAM_TANGENT_PREINTEGRATION=OFF .. && \
+    -DGTSAM_BUILD_TESTS=OFF -DGTSAM_BUILD_EXAMPLES_ALWAYS=OFF \
+    -DCMAKE_BUILD_TYPE=Release -DGTSAM_BUILD_UNSTABLE=ON \
+    -DGTSAM_POSE3_EXPMAP=ON -DGTSAM_ROT3_EXPMAP=ON \
+    -DGTSAM_TANGENT_PREINTEGRATION=OFF .. && \
     make -j$(nproc) install
 
-
 # Install Open_GV
-RUN git clone https://github.com/MIT-SPARK/opengv
-RUN cd opengv && \
-      mkdir build
-RUN cd opengv/build && \
-      cmake -DCMAKE_BUILD_TYPE=Release \
-      -DCMAKE_INSTALL_PREFIX=/usr/local \
-      .. && make -j$(nproc) install
+RUN git clone https://github.com/MIT-SPARK/opengv && \
+    cd opengv && mkdir build && \
+    cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local .. && \
+    make -j$(nproc) install
 
-
-
-RUN mkdir -p /home/user/dev_ws/src/core
-RUN mkdir -p /home/user/dev_ws/src/third_parties
-RUN mkdir -p /home/user/upstream_ws/src
+RUN mkdir -p /home/user/dev_ws/src/core && \
+    mkdir -p /home/user/dev_ws/src/third_parties && \
+    mkdir -p /home/user/upstream_ws/src
 
 SHELL ["/bin/bash", "-c"]
 

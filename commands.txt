@@ -55,75 +55,97 @@ from cv_bridge import CvBridge
 import cv2
 import glob
 import yaml
-
+import numpy as np
+import os
 
 class RGBDPublisher(Node):
 
     def __init__(self):
         super().__init__('rgbd_publisher')
 
-        self.rgb_pub = self.create_publisher(
-            Image,
-            '/camera/color/image_rect_color',
-            10)
-
-        self.depth_pub = self.create_publisher(
-            Image,
-            '/camera/aligned_depth_to_color/image_raw',
-            10)
-
-        self.info_pub = self.create_publisher(
-            CameraInfo,
-            '/camera/color/camera_info',
-            10)
+        # Topics match what DynoSAM expects
+        self.rgb_pub = self.create_publisher(Image, '/camera/color/image_rect_color', 10)
+        self.depth_pub = self.create_publisher(Image, '/camera/aligned_depth_to_color/image_raw', 10)
+        self.info_pub = self.create_publisher(CameraInfo, '/camera/color/camera_info', 10)
 
         self.bridge = CvBridge()
 
-        # CHANGE THESE PATHS IF NEEDED
-        self.rgb_files = sorted(glob.glob('/root/data/rgb/*.png'))
-        self.depth_files = sorted(glob.glob('/root/data/depth/*.png'))
-
-        self.cam_info = self.load_camera_info('/root/data/camera_info.yaml')
+        # Data Paths
+        self.data_dir = '/root/data'
+        self.rgb_files = sorted(glob.glob(os.path.join(self.data_dir, 'rgb', '*.png')))
+        self.depth_files = sorted(glob.glob(os.path.join(self.data_dir, 'depth', '*.png')))
+        
+        if not self.rgb_files:
+            self.get_logger().error(f"No RGB images found in {self.data_dir}/rgb")
+        
+        self.cam_info = self.load_camera_info(os.path.join(self.data_dir, 'camera_info.yaml'))
 
         self.idx = 0
+        # 30 FPS (0.033s)
         self.timer = self.create_timer(0.033, self.publish_frame)
+        self.get_logger().info("RGBD Publisher Started!")
 
     def load_camera_info(self, path):
         msg = CameraInfo()
-        with open(path) as f:
-            data = yaml.safe_load(f)
-
-        msg.width = data['image_width']
-        msg.height = data['image_height']
-        msg.k = data['K']
-        msg.d = data['D']
-        msg.r = data['R']
-        msg.p = data['P']
-        msg.distortion_model = data['distortion_model']
-
+        try:
+            with open(path) as f:
+                data = yaml.safe_load(f)
+            msg.width = data.get('image_width', 640)
+            msg.height = data.get('image_height', 480)
+            msg.k = data.get('camera_matrix', {}).get('data', [])
+            msg.d = data.get('distortion_coefficients', {}).get('data', [])
+            msg.r = data.get('rectification_matrix', {}).get('data', [])
+            msg.p = data.get('projection_matrix', {}).get('data', [])
+            msg.distortion_model = data.get('distortion_model', 'plumb_bob')
+        except Exception as e:
+            self.get_logger().warn(f"Could not load camera info: {e}. Using empty default.")
         return msg
 
     def publish_frame(self):
-        if self.idx >= len(self.rgb_files):
-            return
+        if not self.rgb_files: return
 
+        # Loop functionality: Restart if we hit the end
+        if self.idx >= len(self.rgb_files):
+            self.idx = 0
+            self.get_logger().info("Looping dataset...")
+
+        # Read Images
         rgb = cv2.imread(self.rgb_files[self.idx])
+        # Read depth as-is (-1)
         depth = cv2.imread(self.depth_files[self.idx], -1)
 
+        if rgb is None or depth is None:
+            self.get_logger().warn(f"Failed to read frame {self.idx}")
+            self.idx += 1
+            return
+
+        # --- DEPTH CONVERSION CRITICAL STEP ---
+        # DynoSAM expects 16-bit unsigned (millimeters). 
+        # If your input is 8-bit (0-255), we must cast it or SLAM will fail.
+        if depth.dtype != np.uint16:
+            # Assuming input 0-255 map where 255 is roughly 5 meters?
+            # This is a guess. Ideally, generate real 16-bit depth.
+            depth = depth.astype(np.uint16) * 20 # Scale factor hack if needed
+        
+        # Convert to ROS messages
         rgb_msg = self.bridge.cv2_to_imgmsg(rgb, encoding='bgr8')
         depth_msg = self.bridge.cv2_to_imgmsg(depth, encoding='16UC1')
 
+        # Sync Timestamps
         now = self.get_clock().now().to_msg()
         rgb_msg.header.stamp = now
+        rgb_msg.header.frame_id = "camera_optical_frame"
         depth_msg.header.stamp = now
+        depth_msg.header.frame_id = "camera_optical_frame"
         self.cam_info.header.stamp = now
+        self.cam_info.header.frame_id = "camera_optical_frame"
 
+        # Publish
         self.rgb_pub.publish(rgb_msg)
         self.depth_pub.publish(depth_msg)
         self.info_pub.publish(self.cam_info)
 
         self.idx += 1
-
 
 def main():
     rclpy.init()
@@ -131,7 +153,6 @@ def main():
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()
-
 
 if __name__ == '__main__':
     main()
@@ -154,7 +175,7 @@ source install/setup.bash
 
 ros2 launch dynosam_ros dyno_sam_launch.py \
   params_path:=/home/user/dev_ws/src/core/dynosam/params/ \
-  dataset_path:=/root/data \
+  dataset_path:=/root/data/sequences/00 \
   v:=1 \
   data_provider_type:=3 \
   output_path:=/root/results
