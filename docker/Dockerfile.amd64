@@ -6,109 +6,87 @@ LABEL maintainer="Jesse Morris <jesse.morris@sydney.edu.au>"
 ENV DEBIAN_FRONTEND=noninteractive
 
 # -----------------------------------------------------------------------------
-# [CRITICAL CONFIG] Target Blackwell Architecture (RTX 50-series = 12.0)
+# [FIX] CUDA Initialization & Blackwell Support
 # -----------------------------------------------------------------------------
 ENV TORCH_CUDA_ARCH_LIST="12.0"
 ENV CUDA_HOME="/usr/local/cuda"
-# Force use of Host Driver libraries and CUDA 12.x compatibility
+# Added /usr/local/cuda/compat to fix Error 35
 ENV LD_LIBRARY_PATH=/usr/local/cuda/compat:/usr/lib/x86_64-linux-gnu:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility,graphics
 
 # -----------------------------------------------------------------------------
-# [CRITICAL FIX] 1. Align CUDA Repo and TensorRT for Blackwell
-# Using the specific 24.04 repo to ensure we get TensorRT 10.x compatible with SM 120
+# Install Dependencies (Including MPI & SFM requirements)
 # -----------------------------------------------------------------------------
-RUN apt-get update && apt-get remove -y libnvinfer* tensorrt && \
-    apt-get install -y software-properties-common wget && \
-    wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb && \
-    dpkg -i cuda-keyring_1.1-1_all.deb && \
-    apt-get update && \
-    # Install TensorRT and the compatibility libraries for newer drivers
-    apt-get install -y tensorrt python3-libnvinfer cuda-compat-12-6 && \
-    rm -rf /var/lib/apt/lists/*
-
-# -----------------------------------------------------------------------------
-# Standard Dependencies
-# -----------------------------------------------------------------------------
-RUN apt-get update && apt-get upgrade -y --no-install-recommends apt-utils && \
-    apt-get install -y git cmake build-essential pkg-config xvfb \
-    python3-pip openssh-client tree nano vim clang-format \
+RUN apt-get update && apt-get install -y \
+    git cmake build-essential pkg-config xvfb wget \
+    software-properties-common nano vim clang-format \
     libopenmpi-dev openmpi-bin \
-    && pip3 install black pre-commit packaging ninja \
+    nlohmann-json3-dev libpng++-dev libgflags-dev libgoogle-glog-dev \
+    libboost-all-dev libtbb-dev libsuitesparse-dev libceres-dev \
+    python3-pip python3-dev python3-setuptools \
+    && pip3 install black pre-commit packaging ninja scipy matplotlib evo pylatex argcomplete \
     && rm -rf /var/lib/apt/lists/*
 
-# ROS installs
-RUN apt-get update && apt-get install -y \
-      ros-kilted-ros2cli-common-extensions \
-      ros-kilted-vision-opencv \
-      nlohmann-json3-dev libpng++-dev libgflags-dev libgoogle-glog-dev \
-      libboost-all-dev libtbb-dev libsuitesparse-dev python3-dev python3-setuptools
-
-RUN python3 -m pip install pylatex evo setuptools pre-commit scipy argcomplete matplotlib
+# -----------------------------------------------------------------------------
+# [FIX] Update TensorRT for SM 120
+# -----------------------------------------------------------------------------
+RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb && \
+    dpkg -i cuda-keyring_1.1-1_all.deb && \
+    apt-get update && apt-get install -y tensorrt python3-libnvinfer cuda-compat-12-8
 
 WORKDIR /root/
 
 # -----------------------------------------------------------------------------
-# [CRITICAL FIX] 2. Build OpenCV for SM 120 (Blackwell)
+# [FIX] Build OpenCV with MPI Scrubbing & SFM Support
 # -----------------------------------------------------------------------------
-RUN apt-get update && apt-get install -y \
-      unzip libjpeg-dev libpng-dev libpng++-dev libtiff-dev libgtk2.0-dev \
-      libatlas-base-dev gfortran
+RUN git clone https://github.com/opencv/opencv.git && cd opencv && git checkout tags/4.10.0
+RUN git clone https://github.com/opencv/opencv_contrib.git && cd opencv_contrib && git checkout tags/4.10.0
 
-RUN git clone https://github.com/opencv/opencv.git && \
-      cd opencv && git checkout tags/4.10.0 && mkdir build
-
-RUN git clone https://github.com/opencv/opencv_contrib.git && \
-      cd opencv_contrib && git checkout tags/4.10.0
-
-RUN cd opencv/build && \
-      cmake -DCMAKE_BUILD_TYPE=Release \
-      -DCMAKE_INSTALL_PREFIX=/usr/local \
-      -D BUILD_opencv_python=OFF \
-      -D BUILD_opencv_python3=ON \
-      -D WITH_CUDA=ON \
-      -D WITH_CUDNN=ON \
-      -D INSTALL_CUDA_LIBS=OFF \
-      # Blackwell Target
-      -D CUDA_ARCH_BIN="12.0" \
-      -D CUDA_ARCH_PTX="12.0" \
-      -D OPENCV_DNN_CUDA=ON \
-      -D ENABLE_FAST_MATH=ON \
-      -D CUDA_FAST_MATH=ON \
-      -D WITH_CUFFT=ON \
-      -D WITH_CUBLAS=ON \
-      -D WITH_TBB=ON \
-      -D OPENCV_EXTRA_MODULES_PATH=/root/opencv_contrib/modules .. && \
-      make -j$(nproc) install
+RUN mkdir -p opencv/build && cd opencv/build && \
+    # The DynoSAM Repository Fix: Scrub HPC-X paths before CMake
+    export PATH=$(echo $PATH | tr ':' '\n' | grep -v '/opt/hpcx' | grep -v '/usr/local/mpi/bin' | paste -sd:) && \
+    unset OPENMPI_VERSION && unset OMPI_MCA_coll_hcoll_enable && unset OPAL_PREFIX && \
+    cmake -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr/local \
+    -DBUILD_opencv_python=OFF \
+    -DBUILD_opencv_python3=ON \
+    -DWITH_CUDA=ON \
+    -DWITH_CUDNN=ON \
+    -DINSTALL_CUDA_LIBS=OFF \
+    -DCUDA_ARCH_BIN="12.0" \
+    -DCUDA_ARCH_PTX="12.0" \
+    -DOPENCV_DNN_CUDA=ON \
+    -DENABLE_FAST_MATH=ON \
+    -DCUDA_FAST_MATH=ON \
+    -DWITH_CUFFT=ON \
+    -DWITH_CUBLAS=ON \
+    -DWITH_TBB=ON \
+    -DBUILD_opencv_sfm=ON \
+    -DMPI_C_COMPILER=/usr/bin/mpicc \
+    -DMPI_CXX_COMPILER=/usr/bin/mpicxx \
+    -DOPENCV_EXTRA_MODULES_PATH=/root/opencv_contrib/modules .. && \
+    make -j$(nproc) install
 
 # -----------------------------------------------------------------------------
-# Remaining Installs (Config Utils, GTSAM, OpenGV)
+# Remaining Installs (GTSAM, OpenGV, Config Utils)
 # -----------------------------------------------------------------------------
 RUN git clone https://github.com/MIT-SPARK/config_utilities.git && \
-      cd config_utilities/config_utilities && mkdir build && \
-      cd build && cmake .. && make -j$(nproc) install
+    cd config_utilities/config_utilities && mkdir build && cd build && \
+    cmake .. && make -j$(nproc) install
 
 RUN git clone https://github.com/borglab/gtsam.git && \
-    cd gtsam && git checkout tags/4.2.0 && mkdir build && \
-    cd build && \
-    cmake -DCMAKE_INSTALL_PREFIX=/usr/local \
-    -DGTSAM_USE_SYSTEM_EIGEN=ON \
-    -DGTSAM_BUILD_TESTS=OFF -DGTSAM_BUILD_EXAMPLES_ALWAYS=OFF \
-    -DCMAKE_BUILD_TYPE=Release -DGTSAM_BUILD_UNSTABLE=ON \
-    -DGTSAM_POSE3_EXPMAP=ON -DGTSAM_ROT3_EXPMAP=ON \
-    -DGTSAM_TANGENT_PREINTEGRATION=OFF .. && \
+    cd gtsam && git checkout tags/4.2.0 && mkdir build && cd build && \
+    cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DGTSAM_USE_SYSTEM_EIGEN=ON \
+    -DGTSAM_BUILD_TESTS=OFF -DCMAKE_BUILD_TYPE=Release -DGTSAM_BUILD_UNSTABLE=ON .. && \
     make -j$(nproc) install
 
 RUN git clone https://github.com/MIT-SPARK/opengv && \
-    cd opengv && mkdir build && \
-    cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local .. && \
+    cd opengv && mkdir build && cd build && \
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local .. && \
     make -j$(nproc) install
 
+# Final workspace setup
 RUN mkdir -p /home/user/dev_ws/src/core /home/user/dev_ws/src/third_parties /home/user/upstream_ws/src
-
-SHELL ["/bin/bash", "-c"]
-
-# Final environment cleanup to ensure runtime works
-ENV NVIDIA_VISIBLE_DEVICES all
-ENV NVIDIA_DRIVER_CAPABILITIES compute,utility,graphics
-
 WORKDIR /home/user/dev_ws
+SHELL ["/bin/bash", "-c"]
