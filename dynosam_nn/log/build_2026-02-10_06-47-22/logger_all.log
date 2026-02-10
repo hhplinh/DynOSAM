@@ -1,0 +1,133 @@
+[0.067s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'dynosam_nn', '--symlink-install', '--cmake-args', '-DPython3_EXECUTABLE=/usr/bin/python3']
+[0.067s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=20, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['dynosam_nn'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=['-DPython3_EXECUTABLE=/usr/bin/python3'], cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x70d3452f09e0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x70d34560d1f0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x70d34560d1f0>>)
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.086s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/user/dev_ws/src/core/dynosam_nn'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.100s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_cmake' and name 'dynosam_nn'
+[0.101s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.101s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.101s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.101s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.101s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.110s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 10 installed packages in /home/user/dev_ws/install
+[0.110s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 341 installed packages in /opt/ros/kilted
+[0.111s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.129s] WARNING:colcon.colcon_core.package_selection:Some selected packages are already built in one or more underlay workspaces:
+	'dynosam_nn' is in: /home/user/dev_ws/install/dynosam_nn
+If a package in a merged underlay workspace is overridden and it installs headers, then all packages in the overlay must sort their include directories by workspace order. Failure to do so may result in build failures or undefined behavior at run time.
+If the overridden package is used by another package in any underlay, then the overriding package in the overlay must be API and ABI compatible or undefined behavior at run time may occur.
+
+If you understand the risks and want to override a package anyways, add the following to the command line:
+	--allow-overriding dynosam_nn
+
+This may be promoted to an error in a future release of colcon-override-check.
+[0.129s] Level 5:colcon.colcon_core.verb:set package 'dynosam_nn' build argument 'cmake_args' from command line to '['-DPython3_EXECUTABLE=/usr/bin/python3']'
+[0.129s] Level 5:colcon.colcon_core.verb:set package 'dynosam_nn' build argument 'cmake_target' from command line to 'None'
+[0.129s] Level 5:colcon.colcon_core.verb:set package 'dynosam_nn' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.129s] Level 5:colcon.colcon_core.verb:set package 'dynosam_nn' build argument 'cmake_clean_cache' from command line to 'False'
+[0.129s] Level 5:colcon.colcon_core.verb:set package 'dynosam_nn' build argument 'cmake_clean_first' from command line to 'False'
+[0.129s] Level 5:colcon.colcon_core.verb:set package 'dynosam_nn' build argument 'cmake_force_configure' from command line to 'False'
+[0.129s] Level 5:colcon.colcon_core.verb:set package 'dynosam_nn' build argument 'ament_cmake_args' from command line to 'None'
+[0.129s] Level 5:colcon.colcon_core.verb:set package 'dynosam_nn' build argument 'catkin_cmake_args' from command line to 'None'
+[0.129s] Level 5:colcon.colcon_core.verb:set package 'dynosam_nn' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.129s] DEBUG:colcon.colcon_core.verb:Building package 'dynosam_nn' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': ['-DPython3_EXECUTABLE=/usr/bin/python3'], 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn', 'merge_install': False, 'path': '/home/user/dev_ws/src/core/dynosam_nn', 'symlink_install': True, 'test_result_base': None}
+[0.129s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.130s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.130s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/user/dev_ws/src/core/dynosam_nn' with build type 'ament_cmake'
+[0.130s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/user/dev_ws/src/core/dynosam_nn'
+[0.131s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.131s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.131s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.163s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/dev_ws/install/rgbd_publisher_pkg:/opt/ros/kilted _=/usr/bin/env /usr/local/bin/cmake /home/user/dev_ws/src/core/dynosam_nn -DPython3_EXECUTABLE=/usr/bin/python3 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn
+[5.663s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/dev_ws/install/rgbd_publisher_pkg:/opt/ros/kilted _=/usr/bin/env /usr/local/bin/cmake /home/user/dev_ws/src/core/dynosam_nn -DPython3_EXECUTABLE=/usr/bin/python3 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn
+[5.663s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/dev_ws/install/rgbd_publisher_pkg:/opt/ros/kilted _=/usr/bin/env /usr/local/bin/cmake --build /home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn -- -j20 -l20
+[87.094s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/dev_ws/install/rgbd_publisher_pkg:/opt/ros/kilted _=/usr/bin/env /usr/local/bin/cmake --build /home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn -- -j20 -l20
+[87.097s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/dev_ws/install/rgbd_publisher_pkg:/opt/ros/kilted _=/usr/bin/env /usr/local/bin/cmake --install /home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn
+[87.234s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dynosam_nn)
+[87.234s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/dev_ws/install/rgbd_publisher_pkg:/opt/ros/kilted _=/usr/bin/env /usr/local/bin/cmake --install /home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn
+[87.235s] Level 1:colcon.colcon_core.environment:checking '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn' for CMake module files
+[87.236s] Level 1:colcon.colcon_core.environment:checking '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn' for CMake config files
+[87.236s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynosam_nn', 'cmake_prefix_path')
+[87.236s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/cmake_prefix_path.ps1'
+[87.236s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/cmake_prefix_path.dsv'
+[87.236s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/cmake_prefix_path.sh'
+[87.237s] Level 1:colcon.colcon_core.environment:checking '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib'
+[87.237s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynosam_nn', 'ld_library_path_lib')
+[87.237s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/ld_library_path_lib.ps1'
+[87.237s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/ld_library_path_lib.dsv'
+[87.237s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/ld_library_path_lib.sh'
+[87.238s] Level 1:colcon.colcon_core.environment:checking '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/bin'
+[87.238s] Level 1:colcon.colcon_core.environment:checking '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/pkgconfig/dynosam_nn.pc'
+[87.238s] Level 1:colcon.colcon_core.environment:checking '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages'
+[87.238s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynosam_nn', 'pythonpath')
+[87.238s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/pythonpath.ps1'
+[87.238s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/pythonpath.dsv'
+[87.238s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/pythonpath.sh'
+[87.238s] Level 1:colcon.colcon_core.environment:checking '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/bin'
+[87.239s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/package.ps1'
+[87.239s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/package.dsv'
+[87.239s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/package.sh'
+[87.240s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/package.bash'
+[87.240s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/package.zsh'
+[87.240s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/colcon-core/packages/dynosam_nn)
+[87.240s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dynosam_nn)
+[87.240s] Level 1:colcon.colcon_core.environment:checking '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn' for CMake module files
+[87.241s] Level 1:colcon.colcon_core.environment:checking '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn' for CMake config files
+[87.241s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynosam_nn', 'cmake_prefix_path')
+[87.241s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/cmake_prefix_path.ps1'
+[87.241s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/cmake_prefix_path.dsv'
+[87.242s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/cmake_prefix_path.sh'
+[87.242s] Level 1:colcon.colcon_core.environment:checking '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib'
+[87.242s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynosam_nn', 'ld_library_path_lib')
+[87.242s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/ld_library_path_lib.ps1'
+[87.242s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/ld_library_path_lib.dsv'
+[87.242s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/ld_library_path_lib.sh'
+[87.242s] Level 1:colcon.colcon_core.environment:checking '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/bin'
+[87.242s] Level 1:colcon.colcon_core.environment:checking '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/pkgconfig/dynosam_nn.pc'
+[87.243s] Level 1:colcon.colcon_core.environment:checking '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages'
+[87.243s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynosam_nn', 'pythonpath')
+[87.243s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/pythonpath.ps1'
+[87.243s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/pythonpath.dsv'
+[87.243s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/hook/pythonpath.sh'
+[87.243s] Level 1:colcon.colcon_core.environment:checking '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/bin'
+[87.243s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/package.ps1'
+[87.244s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/package.dsv'
+[87.244s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/package.sh'
+[87.244s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/package.bash'
+[87.244s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/package.zsh'
+[87.245s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/colcon-core/packages/dynosam_nn)
+[87.245s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[87.245s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[87.245s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[87.245s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[87.249s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[87.249s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[87.249s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[87.249s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[87.251s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message
+[87.251s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[87.251s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/user/dev_ws/src/core/dynosam_nn/install/local_setup.ps1'
+[87.252s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/user/dev_ws/src/core/dynosam_nn/install/_local_setup_util_ps1.py'
+[87.252s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/user/dev_ws/src/core/dynosam_nn/install/setup.ps1'
+[87.253s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/user/dev_ws/src/core/dynosam_nn/install/local_setup.sh'
+[87.253s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/user/dev_ws/src/core/dynosam_nn/install/_local_setup_util_sh.py'
+[87.254s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/user/dev_ws/src/core/dynosam_nn/install/setup.sh'
+[87.254s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/user/dev_ws/src/core/dynosam_nn/install/local_setup.bash'
+[87.254s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/user/dev_ws/src/core/dynosam_nn/install/setup.bash'
+[87.255s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/user/dev_ws/src/core/dynosam_nn/install/local_setup.zsh'
+[87.255s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/user/dev_ws/src/core/dynosam_nn/install/setup.zsh'

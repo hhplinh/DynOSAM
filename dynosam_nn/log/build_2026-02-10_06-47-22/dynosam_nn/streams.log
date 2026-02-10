@@ -1,0 +1,1065 @@
+[0.032s] Invoking command in '/home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/dev_ws/install/rgbd_publisher_pkg:/opt/ros/kilted _=/usr/bin/env /usr/local/bin/cmake /home/user/dev_ws/src/core/dynosam_nn -DPython3_EXECUTABLE=/usr/bin/python3 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn
+[0.113s] -- The C compiler identification is GNU 13.3.0
+[0.147s] -- The CXX compiler identification is GNU 13.3.0
+[0.940s] -- The CUDA compiler identification is NVIDIA 12.6.85
+[0.946s] -- Detecting C compiler ABI info
+[1.029s] -- Detecting C compiler ABI info - done
+[1.033s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.033s] -- Detecting C compile features
+[1.033s] -- Detecting C compile features - done
+[1.035s] -- Detecting CXX compiler ABI info
+[1.126s] -- Detecting CXX compiler ABI info - done
+[1.129s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.129s] -- Detecting CXX compile features
+[1.130s] -- Detecting CXX compile features - done
+[1.131s] -- Detecting CUDA compiler ABI info
+[1.866s] -- Detecting CUDA compiler ABI info - done
+[1.880s] -- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc - skipped
+[1.996s] -- Detecting CUDA compile features
+[1.996s] -- Detecting CUDA compile features - done
+[2.154s] -- Found MPI_C: /opt/hpcx/ompi/lib/libmpi.so (found version "3.1") 
+[2.417s] -- Found MPI_CXX: /opt/hpcx/ompi/lib/libmpi.so (found version "3.1") 
+[2.417s] -- Found MPI: TRUE (found version "3.1")  
+[2.417s] -- Found dynosam_common: 0.0.1 (/home/user/dev_ws/install/dynosam_common/share/dynosam_common/cmake)
+[2.634s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[2.681s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[2.761s] -- Found rosidl_generator_c: 4.9.6 (/opt/ros/kilted/share/rosidl_generator_c/cmake)
+[2.774s] -- Found rosidl_generator_cpp: 4.9.6 (/opt/ros/kilted/share/rosidl_generator_cpp/cmake)
+[2.788s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.802s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.855s] -- Found rmw_implementation_cmake: 7.8.2 (/opt/ros/kilted/share/rmw_implementation_cmake/cmake)
+[2.858s] -- Found rmw_fastrtps_cpp: 9.3.3 (/opt/ros/kilted/share/rmw_fastrtps_cpp/cmake)
+[2.920s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[2.926s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.040s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[3.130s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[3.131s] -- Found Threads: TRUE  
+[3.136s] -- Found CUDA: /usr/local/cuda (found suitable exact version "12.6") 
+[3.189s] -- Found flann version 1.9.2
+[3.471s] -- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+[3.471s] -- Found OpenMP: TRUE (found version "4.5") found components: CXX 
+[4.225s] -- Checking for module 'libusb-1.0'
+[4.233s] --   Found libusb-1.0, version 1.0.27
+[4.253s] -- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[4.254s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[4.287s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[4.288s] -- Could NOT find Pcap (missing: PCAP_LIBRARIES PCAP_INCLUDE_DIRS) 
+[4.292s] -- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.3.#define ZLIB_VERSION "1.3"") 
+[4.298s] -- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.43") 
+[4.404s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[4.408s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[4.505s] -- Found Qhull version 8.0.2
+[4.613s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[4.710s] -- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+[4.710s] -- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+[4.711s] -- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+[4.711s] -- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+[4.711s] -- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+[4.712s] -- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+[4.712s] -- Found PCL_2D: /usr/include/pcl-1.14  
+[4.712s] -- Found PCL_GEOMETRY: /usr/include/pcl-1.14  
+[4.712s] -- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+[4.713s] -- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  
+[4.713s] -- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  
+[4.714s] -- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  
+[4.714s] -- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  
+[4.714s] -- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  
+[4.715s] -- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  
+[4.715s] -- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  
+[4.716s] -- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  
+[4.716s] -- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  
+[4.716s] -- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  
+[4.717s] -- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  
+[4.717s] -- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.14  
+[4.717s] -- Found PCL_MODELER: /usr/include/pcl-1.14  
+[4.718s] -- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.14  
+[4.718s] -- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  
+[4.718s] -- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  
+[4.748s] -- GTSAM include directory:  /usr/local/lib/cmake/GTSAM/../../../include
+[4.754s] -- Found dynosam_cv: 0.0.1 (/home/user/dev_ws/install/dynosam_cv/share/dynosam_cv/cmake)
+[4.757s] -- Found cv_bridge: 4.1.0 (/opt/ros/kilted/share/cv_bridge/cmake)
+[4.796s] -- Performing Test HAS_FLTO
+[4.910s] -- Performing Test HAS_FLTO - Success
+[4.910s] -- Found pybind11: /usr/include (found version "2.11.1")
+[5.245s] -- Found Python3: /usr/bin/python3 (found suitable version "3.12.3", minimum required is "3.10") found components: Interpreter Development Development.Module Development.Embed 
+[5.256s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: python3 numpy3 
+[5.259s] -- Found image_transport: 6.1.3 (/opt/ros/kilted/share/image_transport/cmake)
+[5.283s] -- Found CUDAToolkit: /usr/local/cuda/include (found version "12.6.85") 
+[5.341s] -- Found TensorRT: /usr/lib/x86_64-linux-gnu/libnvinfer.so (found version "10.6.0.26") found components: onnxparser infer_plugin 
+[5.342s] [0mDetected x86_64/AMD64. Setting CUDA Architectures to 'all' (flexible build).[0m
+[5.342s] [0mFinal CMAKE_CUDA_ARCHITECTURES set to: all[0m
+[5.470s] -- Configuring done
+[5.509s] -- Generating done
+[5.517s] -- Build files have been written to: /home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn
+[5.532s] Invoked command in '/home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/dev_ws/install/rgbd_publisher_pkg:/opt/ros/kilted _=/usr/bin/env /usr/local/bin/cmake /home/user/dev_ws/src/core/dynosam_nn -DPython3_EXECUTABLE=/usr/bin/python3 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn
+[5.532s] Invoking command in '/home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/dev_ws/install/rgbd_publisher_pkg:/opt/ros/kilted _=/usr/bin/env /usr/local/bin/cmake --build /home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn -- -j20 -l20
+[5.622s] [  4%] Built target ament_cmake_python_symlink_dynosam_nn_py
+[5.622s] [  4%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/YoloV8ObjectDetector.cc.o[0m
+[5.624s] [  8%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/ModelConfig.cc.o[0m
+[5.632s] [ 12%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/trackers/ObjectTracker.cc.o[0m
+[5.633s] [ 16%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/TrtUtilities.cc.o[0m
+[5.634s] [ 25%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/trackers/byte_tracker/Rect.cc.o[0m
+[5.634s] [ 25%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/PyObjectDetector.cc.o[0m
+[5.639s] [ 29%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/CudaUtils.cc.o[0m
+[5.639s] [ 33%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/trackers/byte_tracker/KalmanFilter.cc.o[0m
+[5.640s] [ 37%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/trackers/byte_tracker/STrack.cc.o[0m
+[5.641s] [ 41%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/bindings/PyBoostWrapper.cc.o[0m
+[5.641s] [ 45%] [32mBuilding CUDA object CMakeFiles/dynosam_nn.dir/src/YoloV8CudaUtils.cu.o[0m
+[5.641s] [ 50%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/ObjectDetector.cc.o[0m
+[5.642s] [ 54%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/trackers/byte_tracker/ByteTracker.cc.o[0m
+[5.642s] [ 58%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/trackers/byte_tracker/lapjv.cc.o[0m
+[5.717s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/trackers/byte_tracker/lapjv.cc:[m[K In function ‘[01m[Ksize_t {anonymous}::[01;32m[K_find_dense[m[K(size_t, size_t, double*, int*, int*)[m[K’:
+[5.718s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/trackers/byte_tracker/lapjv.cc:154:74:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ky[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[5.718s]   154 | size_t _find_dense(const size_t n, size_t lo, double *d, int *cols, [01;35m[Kint *y[m[K) {
+[5.718s]       |                                                                     [01;35m[K~~~~~^[m[K
+[5.819s] running egg_info
+[5.831s] creating dynosam_nn_py.egg-info
+[5.831s] writing dynosam_nn_py.egg-info/PKG-INFO
+[5.831s] writing dependency_links to dynosam_nn_py.egg-info/dependency_links.txt
+[5.831s] writing top-level names to dynosam_nn_py.egg-info/top_level.txt
+[5.831s] writing manifest file 'dynosam_nn_py.egg-info/SOURCES.txt'
+[5.866s] reading manifest file 'dynosam_nn_py.egg-info/SOURCES.txt'
+[5.867s] writing manifest file 'dynosam_nn_py.egg-info/SOURCES.txt'
+[5.911s] [ 58%] Built target ament_cmake_python_build_dynosam_nn_py_egg
+[23.075s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(95)[0m: [01;35mwarning[0m #177-D: variable [01m"pixel_sum"[0m was declared but never referenced
+[23.075s]       float pixel_sum = 0.0f;
+[23.075s]             ^
+[23.075s] 
+[23.075s] [01;36m[0m[01;36mRemark[0m: The warnings can be suppressed with "-diag-suppress <warning-number>"
+[23.075s] 
+[23.075s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(99)[0m: [01;35mwarning[0m #177-D: variable [01m"stride"[0m was declared but never referenced
+[23.075s]       const int stride = mask_h * mask_w;
+[23.075s]                 ^
+[23.075s] 
+[23.075s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(100)[0m: [01;35mwarning[0m #177-D: variable [01m"idx"[0m was declared but never referenced
+[23.075s]       const int idx = y * mask_w + x;
+[23.075s]                 ^
+[23.075s] 
+[26.758s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(95)[0m: [01;35mwarning[0m #177-D: variable [01m"pixel_sum"[0m was declared but never referenced
+[26.759s]       float pixel_sum = 0.0f;
+[26.759s]             ^
+[26.759s] 
+[26.759s] [01;36m[0m[01;36mRemark[0m: The warnings can be suppressed with "-diag-suppress <warning-number>"
+[26.759s] 
+[26.759s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(99)[0m: [01;35mwarning[0m #177-D: variable [01m"stride"[0m was declared but never referenced
+[26.759s]       const int stride = mask_h * mask_w;
+[26.759s]                 ^
+[26.759s] 
+[26.759s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(100)[0m: [01;35mwarning[0m #177-D: variable [01m"idx"[0m was declared but never referenced
+[26.759s]       const int idx = y * mask_w + x;
+[26.759s]                 ^
+[26.759s] 
+[30.370s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(95)[0m: [01;35mwarning[0m #177-D: variable [01m"pixel_sum"[0m was declared but never referenced
+[30.370s]       float pixel_sum = 0.0f;
+[30.370s]             ^
+[30.370s] 
+[30.370s] [01;36m[0m[01;36mRemark[0m: The warnings can be suppressed with "-diag-suppress <warning-number>"
+[30.370s] 
+[30.370s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(99)[0m: [01;35mwarning[0m #177-D: variable [01m"stride"[0m was declared but never referenced
+[30.370s]       const int stride = mask_h * mask_w;
+[30.370s]                 ^
+[30.370s] 
+[30.370s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(100)[0m: [01;35mwarning[0m #177-D: variable [01m"idx"[0m was declared but never referenced
+[30.370s]       const int idx = y * mask_w + x;
+[30.370s]                 ^
+[30.370s] 
+[34.023s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(95)[0m: [01;35mwarning[0m #177-D: variable [01m"pixel_sum"[0m was declared but never referenced
+[34.024s]       float pixel_sum = 0.0f;
+[34.024s]             ^
+[34.024s] 
+[34.024s] [01;36m[0m[01;36mRemark[0m: The warnings can be suppressed with "-diag-suppress <warning-number>"
+[34.024s] 
+[34.024s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(99)[0m: [01;35mwarning[0m #177-D: variable [01m"stride"[0m was declared but never referenced
+[34.024s]       const int stride = mask_h * mask_w;
+[34.024s]                 ^
+[34.024s] 
+[34.024s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(100)[0m: [01;35mwarning[0m #177-D: variable [01m"idx"[0m was declared but never referenced
+[34.024s]       const int idx = y * mask_w + x;
+[34.024s]                 ^
+[34.024s] 
+[37.718s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(95)[0m: [01;35mwarning[0m #177-D: variable [01m"pixel_sum"[0m was declared but never referenced
+[37.719s]       float pixel_sum = 0.0f;
+[37.719s]             ^
+[37.719s] 
+[37.719s] [01;36m[0m[01;36mRemark[0m: The warnings can be suppressed with "-diag-suppress <warning-number>"
+[37.719s] 
+[37.719s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(99)[0m: [01;35mwarning[0m #177-D: variable [01m"stride"[0m was declared but never referenced
+[37.719s]       const int stride = mask_h * mask_w;
+[37.719s]                 ^
+[37.719s] 
+[37.719s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(100)[0m: [01;35mwarning[0m #177-D: variable [01m"idx"[0m was declared but never referenced
+[37.719s]       const int idx = y * mask_w + x;
+[37.719s]                 ^
+[37.719s] 
+[41.384s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(95)[0m: [01;35mwarning[0m #177-D: variable [01m"pixel_sum"[0m was declared but never referenced
+[41.384s]       float pixel_sum = 0.0f;
+[41.384s]             ^
+[41.384s] 
+[41.384s] [01;36m[0m[01;36mRemark[0m: The warnings can be suppressed with "-diag-suppress <warning-number>"
+[41.384s] 
+[41.384s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(99)[0m: [01;35mwarning[0m #177-D: variable [01m"stride"[0m was declared but never referenced
+[41.384s]       const int stride = mask_h * mask_w;
+[41.384s]                 ^
+[41.384s] 
+[41.384s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(100)[0m: [01;35mwarning[0m #177-D: variable [01m"idx"[0m was declared but never referenced
+[41.384s]       const int idx = y * mask_w + x;
+[41.384s]                 ^
+[41.384s] 
+[44.993s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(95)[0m: [01;35mwarning[0m #177-D: variable [01m"pixel_sum"[0m was declared but never referenced
+[44.993s]       float pixel_sum = 0.0f;
+[44.993s]             ^
+[44.993s] 
+[44.993s] [01;36m[0m[01;36mRemark[0m: The warnings can be suppressed with "-diag-suppress <warning-number>"
+[44.993s] 
+[44.993s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(99)[0m: [01;35mwarning[0m #177-D: variable [01m"stride"[0m was declared but never referenced
+[44.993s]       const int stride = mask_h * mask_w;
+[44.993s]                 ^
+[44.993s] 
+[44.994s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(100)[0m: [01;35mwarning[0m #177-D: variable [01m"idx"[0m was declared but never referenced
+[44.994s]       const int idx = y * mask_w + x;
+[44.994s]                 ^
+[44.994s] 
+[48.593s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(95)[0m: [01;35mwarning[0m #177-D: variable [01m"pixel_sum"[0m was declared but never referenced
+[48.593s]       float pixel_sum = 0.0f;
+[48.593s]             ^
+[48.593s] 
+[48.593s] [01;36m[0m[01;36mRemark[0m: The warnings can be suppressed with "-diag-suppress <warning-number>"
+[48.593s] 
+[48.593s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(99)[0m: [01;35mwarning[0m #177-D: variable [01m"stride"[0m was declared but never referenced
+[48.593s]       const int stride = mask_h * mask_w;
+[48.593s]                 ^
+[48.593s] 
+[48.593s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(100)[0m: [01;35mwarning[0m #177-D: variable [01m"idx"[0m was declared but never referenced
+[48.594s]       const int idx = y * mask_w + x;
+[48.594s]                 ^
+[48.594s] 
+[52.155s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(95)[0m: [01;35mwarning[0m #177-D: variable [01m"pixel_sum"[0m was declared but never referenced
+[52.155s]       float pixel_sum = 0.0f;
+[52.155s]             ^
+[52.155s] 
+[52.155s] [01;36m[0m[01;36mRemark[0m: The warnings can be suppressed with "-diag-suppress <warning-number>"
+[52.155s] 
+[52.155s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(99)[0m: [01;35mwarning[0m #177-D: variable [01m"stride"[0m was declared but never referenced
+[52.156s]       const int stride = mask_h * mask_w;
+[52.156s]                 ^
+[52.156s] 
+[52.156s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(100)[0m: [01;35mwarning[0m #177-D: variable [01m"idx"[0m was declared but never referenced
+[52.156s]       const int idx = y * mask_w + x;
+[52.156s]                 ^
+[52.156s] 
+[55.752s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(95)[0m: [01;35mwarning[0m #177-D: variable [01m"pixel_sum"[0m was declared but never referenced
+[55.752s]       float pixel_sum = 0.0f;
+[55.752s]             ^
+[55.752s] 
+[55.752s] [01;36m[0m[01;36mRemark[0m: The warnings can be suppressed with "-diag-suppress <warning-number>"
+[55.752s] 
+[55.752s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(99)[0m: [01;35mwarning[0m #177-D: variable [01m"stride"[0m was declared but never referenced
+[55.752s]       const int stride = mask_h * mask_w;
+[55.753s]                 ^
+[55.753s] 
+[55.753s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(100)[0m: [01;35mwarning[0m #177-D: variable [01m"idx"[0m was declared but never referenced
+[55.753s]       const int idx = y * mask_w + x;
+[55.753s]                 ^
+[55.753s] 
+[59.367s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(95)[0m: [01;35mwarning[0m #177-D: variable [01m"pixel_sum"[0m was declared but never referenced
+[59.367s]       float pixel_sum = 0.0f;
+[59.367s]             ^
+[59.367s] 
+[59.367s] [01;36m[0m[01;36mRemark[0m: The warnings can be suppressed with "-diag-suppress <warning-number>"
+[59.367s] 
+[59.367s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(99)[0m: [01;35mwarning[0m #177-D: variable [01m"stride"[0m was declared but never referenced
+[59.367s]       const int stride = mask_h * mask_w;
+[59.367s]                 ^
+[59.367s] 
+[59.367s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(100)[0m: [01;35mwarning[0m #177-D: variable [01m"idx"[0m was declared but never referenced
+[59.367s]       const int idx = y * mask_w + x;
+[59.367s]                 ^
+[59.367s] 
+[62.984s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(95)[0m: [01;35mwarning[0m #177-D: variable [01m"pixel_sum"[0m was declared but never referenced
+[62.984s]       float pixel_sum = 0.0f;
+[62.984s]             ^
+[62.984s] 
+[62.984s] [01;36m[0m[01;36mRemark[0m: The warnings can be suppressed with "-diag-suppress <warning-number>"
+[62.984s] 
+[62.984s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(99)[0m: [01;35mwarning[0m #177-D: variable [01m"stride"[0m was declared but never referenced
+[62.984s]       const int stride = mask_h * mask_w;
+[62.984s]                 ^
+[62.984s] 
+[62.984s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(100)[0m: [01;35mwarning[0m #177-D: variable [01m"idx"[0m was declared but never referenced
+[62.984s]       const int idx = y * mask_w + x;
+[62.984s]                 ^
+[62.984s] 
+[66.613s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(95)[0m: [01;35mwarning[0m #177-D: variable [01m"pixel_sum"[0m was declared but never referenced
+[66.613s]       float pixel_sum = 0.0f;
+[66.613s]             ^
+[66.613s] 
+[66.614s] [01;36m[0m[01;36mRemark[0m: The warnings can be suppressed with "-diag-suppress <warning-number>"
+[66.614s] 
+[66.614s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(99)[0m: [01;35mwarning[0m #177-D: variable [01m"stride"[0m was declared but never referenced
+[66.614s]       const int stride = mask_h * mask_w;
+[66.614s]                 ^
+[66.614s] 
+[66.614s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(100)[0m: [01;35mwarning[0m #177-D: variable [01m"idx"[0m was declared but never referenced
+[66.614s]       const int idx = y * mask_w + x;
+[66.614s]                 ^
+[66.614s] 
+[70.232s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(95)[0m: [01;35mwarning[0m #177-D: variable [01m"pixel_sum"[0m was declared but never referenced
+[70.232s]       float pixel_sum = 0.0f;
+[70.232s]             ^
+[70.232s] 
+[70.233s] [01;36m[0m[01;36mRemark[0m: The warnings can be suppressed with "-diag-suppress <warning-number>"
+[70.233s] 
+[70.233s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(99)[0m: [01;35mwarning[0m #177-D: variable [01m"stride"[0m was declared but never referenced
+[70.233s]       const int stride = mask_h * mask_w;
+[70.233s]                 ^
+[70.233s] 
+[70.233s] [01m[0m[01m/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu(100)[0m: [01;35mwarning[0m #177-D: variable [01m"idx"[0m was declared but never referenced
+[70.233s]       const int idx = y * mask_w + x;
+[70.233s]                 ^
+[70.233s] 
+[72.198s] [01m[K/tmp/tmpxft_0030131e_00000000-6_YoloV8CudaUtils.compute_90.cudafe1.cpp:1:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.198s]     1 | # [01;35m[K1[m[K "/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu"
+[72.198s]       |   [01;35m[K^[m[K
+[72.198s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:2:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.198s]     2 | #i[01;35m[Kn[m[Kclude "dynosam_nn/CudaUtils.hpp"
+[72.198s]       |   [01;35m[K^[m[K
+[72.198s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:2:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.198s]     2 | #i[01;35m[Kn[m[Kclude "dynosam_nn/CudaUtils.hpp"
+[72.198s]       |   [01;35m[K^[m[K
+[72.198s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:2:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.198s]     2 | #i[01;35m[Kn[m[Kclude "dynosam_nn/CudaUtils.hpp"
+[72.198s]       |   [01;35m[K^[m[K
+[72.198s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:2:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.198s]     2 | #i[01;35m[Kn[m[Kclude "dynosam_nn/CudaUtils.hpp"
+[72.198s]       |   [01;35m[K^[m[K
+[72.198s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:2:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.198s]     2 | #i[01;35m[Kn[m[Kclude "dynosam_nn/CudaUtils.hpp"
+[72.198s]       |   [01;35m[K^[m[K
+[72.198s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:2:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.198s]     2 | #i[01;35m[Kn[m[Kclude "dynosam_nn/CudaUtils.hpp"
+[72.198s]       |   [01;35m[K^[m[K
+[72.198s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:3:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.198s]     3 | #i[01;35m[Kn[m[Kclude "dynosam_common/DynamicObjects.hpp"
+[72.198s]       |   [01;35m[K^[m[K
+[72.198s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:7:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.198s]     7 | #i[01;35m[Kn[m[Kclude <cstdio>
+[72.198s]       |   [01;35m[K^[m[K
+[72.198s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:1:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.198s]     1 | #i[01;35m[Knc[m[Klude "dynosam_nn/YoloV8CudaUtils.hpp"
+[72.198s]       |   [01;35m[K^~[m[K
+[72.399s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:9:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.399s]     9 | na[01;35m[Km[m[Kespace internal {
+[72.399s]       |   [01;35m[K^[m[K
+[72.399s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:10:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.399s]    10 | 
+[72.399s]       |   [01;35m[K^[m[K 
+[72.399s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:17:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.399s]    17 |   [01;35m[K//[m[K 0-3: Box Coordinates (Center X, Center Y, Width, Height)
+[72.399s]       |   [01;35m[K^~[m[K
+[72.399s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:19:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.399s]    19 | 
+[72.399s]       |   [01;35m[K^[m[K 
+[72.399s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:22:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.399s]    22 | 
+[72.399s]       |   [01;35m[K^[m[K 
+[72.399s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:25:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.399s]    25 | 
+[72.399s]       |   [01;35m[K^[m[K 
+[72.399s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:28:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.399s]    28 | 
+[72.399s]       |   [01;35m[K^[m[K 
+[72.399s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:34:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.399s]    34 |   [01;35m[K  [m[Kreturn cv::Rect(static_cast<int>(std::round(x - w / 2.0f)),  // top-left x
+[72.399s]       |   [01;35m[K^[m[K 
+[72.399s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:35:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.399s]    35 |   [01;35m[K  [m[K                static_cast<int>(std::round(y - h / 2.0f)),  // top-left y
+[72.400s]       |   [01;35m[K^[m[K 
+[72.400s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:40:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.400s]    40 | #e[01;35m[Knd[m[Kif
+[72.400s]       |   [01;35m[K^~[m[K
+[72.400s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:42:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.400s]    42 | 
+[72.400s]       |   [01;35m[K^[m[K 
+[72.400s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:52:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.400s]    52 |   [01;35m[KYo[m[KloDetectionGpuMatDevice(AlignedYoloDetection* d_detection);
+[72.400s]       |   [01;35m[K^~[m[K
+[72.400s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:53:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.400s]    53 | 
+[72.400s]       |   [01;35m[K^[m[K 
+[72.400s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:56:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.400s]    56 | 
+[72.400s]       |   [01;35m[K^[m[K 
+[72.400s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:59:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.400s]    59 | 
+[72.400s]       |   [01;35m[K^[m[K 
+[72.400s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:62:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.400s]    62 | };
+[72.400s]       |   [01;35m[K^[m[K 
+[72.400s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:63:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.400s]    63 | 
+[72.400s]       |   [01;35m[K^[m[K 
+[72.400s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:65:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.400s]    65 |   [01;35m[Kin[m[Kt num_boxes;    // e.g., 8400
+[72.400s]       |   [01;35m[K^~[m[K
+[72.400s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:66:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.400s]    66 |   [01;35m[Kin[m[Kt num_classes;  // e.g., 80
+[72.400s]       |   [01;35m[K^~[m[K
+[72.400s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:67:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.400s]    67 |   [01;35m[Kfl[m[Koat conf_threshold;
+[72.400s]       |   [01;35m[K^~[m[K
+[72.401s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:68:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.401s]    68 |   [01;35m[Kin[m[Kt box_offset;         // Index offset for Box data
+[72.401s]       |   [01;35m[K^~[m[K
+[72.401s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:69:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.401s]    69 |   [01;35m[Kin[m[Kt class_conf_offset;  // Index offset for Class data
+[72.401s]       |   [01;35m[K^~[m[K
+[72.401s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:70:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.401s]    70 |   [01;35m[Kin[m[Kt mask_coeff_offset;  // Index offset for Mask data
+[72.401s]       |   [01;35m[K^~[m[K
+[72.401s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:71:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.401s]    71 | };
+[72.401s]       |   [01;35m[K^[m[K 
+[72.401s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:72:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.401s]    72 | 
+[72.401s]       |   [01;35m[K^[m[K 
+[72.401s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:87:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.401s]    87 |   [01;35m[K  [m[K                       const YoloKernelConfig& config,
+[72.401s]       |   [01;35m[K^[m[K 
+[72.401s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:94:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.401s]    94 |   [01;35m[K  c[m[Konst YoloDetectionGpuMatDevice& wrappers,
+[72.401s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.401s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:103:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.401s]   103 | } [01;35m[K //[m[K namespace dyno
+[72.401s]       |   [01;35m[K^~~[m[K
+[72.401s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp:104:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.404s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:36:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.404s]    36 | 
+[72.404s]       |   [01;35m[K^[m[K 
+[72.404s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:38:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.404s]    38 |   [01;35m[Kcu[m[KdaStream_t stream_;
+[72.404s]       |   [01;35m[K^~[m[K
+[72.404s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:39:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.404s]    39 |   [01;35m[Kcu[m[KdaEvent_t start_event_;
+[72.404s]       |   [01;35m[K^~[m[K
+[72.404s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:40:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.404s]    40 |   [01;35m[Kcu[m[KdaEvent_t stop_event_;
+[72.404s]       |   [01;35m[K^~[m[K
+[72.404s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:41:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.404s]    41 | 
+[72.404s]       |   [01;35m[K^[m[K 
+[72.404s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:43:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.404s]    43 |   [01;35m[K~C[m[KudaTimeGenerator();
+[72.404s]       |   [01;35m[K^~[m[K
+[72.404s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:44:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.404s]    44 | 
+[72.404s]       |   [01;35m[K^[m[K 
+[72.404s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:46:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.404s]    46 |   [01;35m[Kvo[m[Kid onStop() {}
+[72.405s]       |   [01;35m[K^~[m[K
+[72.405s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:47:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.405s]    47 | 
+[72.405s]       |   [01;35m[K^[m[K 
+[72.405s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:49:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.405s]    49 | };
+[72.405s]       |   [01;35m[K^[m[K 
+[72.405s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:50:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.405s]    50 | 
+[72.405s]       |   [01;35m[K^[m[K 
+[72.405s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:52:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.405s]    52 |   [01;35m[K  [m[K: public utils::BaseTimingStatsCollector<CudaTimeGenerator> {
+[72.405s]       |   [01;35m[K^[m[K 
+[72.405s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:55:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.405s]    55 |   [01;35m[KGp[m[KuTimingStats(const std::string& tag, cudaStream_t stream = 0,
+[72.405s]       |   [01;35m[K^~[m[K
+[72.405s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:56:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.405s]    56 |   [01;35m[K  [m[K             int glog_level = 0, bool construct_stopped = false);
+[72.405s]       |   [01;35m[K^[m[K 
+[72.405s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:59:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.406s]    59 |   [01;35m[K  [m[K             int glog_level = 0, bool construct_stopped = false);
+[72.406s]       |   [01;35m[K^[m[K 
+[72.406s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:61:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.406s]    61 | 
+[72.406s]       |   [01;35m[K^[m[K 
+[72.406s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:63:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.406s]    63 |  p[01;35m[Kub[m[Klic:
+[72.406s]       |   [01;35m[K^~[m[K
+[72.406s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:66:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.406s]    66 |   [01;35m[Kst[m[Katic constexpr unsigned int default_flags = cudaStreamDefault;
+[72.406s]       |   [01;35m[K^~[m[K
+[72.406s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:67:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.406s]    67 | 
+[72.406s]       |   [01;35m[K^[m[K 
+[72.406s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:69:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.406s]    69 |   [01;35m[K  [m[K                      unsigned int flags = cudaStreamDefault);
+[72.406s]       |   [01;35m[K^[m[K 
+[72.406s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:71:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.406s]    71 | 
+[72.406s]       |   [01;35m[K^[m[K 
+[72.406s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:73:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.406s]    73 |   [01;35m[KCu[m[KdaStreamPool(CudaStreamPool const&) = delete;
+[72.407s]       |   [01;35m[K^~[m[K
+[72.407s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:74:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.407s]    74 |   [01;35m[KCu[m[KdaStreamPool& operator=(CudaStreamPool&&) = delete;
+[72.407s]       |   [01;35m[K^~[m[K
+[72.407s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:75:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.407s]    75 |   [01;35m[KCu[m[KdaStreamPool& operator=(CudaStreamPool const&) = delete;
+[72.407s]       |   [01;35m[K^~[m[K
+[72.407s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:76:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.407s]    76 | 
+[72.407s]       |   [01;35m[K^[m[K 
+[72.407s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:78:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.407s]    78 |   [01;35m[Kcv[m[K::cuda::Stream& getCvStream() noexcept;
+[72.407s]       |   [01;35m[K^~[m[K
+[72.407s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:79:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.407s]    79 |   [01;35m[Kcu[m[KdaStream_t getCudaStream() const;
+[72.407s]       |   [01;35m[K^~[m[K
+[72.407s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:80:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.407s]    80 |   [01;35m[Kcv[m[K::cuda::Stream getCvStream(std::size_t stream_id) const;
+[72.407s]       |   [01;35m[K^~[m[K
+[72.407s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:81:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.407s]    81 | 
+[72.407s]       |   [01;35m[K^[m[K 
+[72.407s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:83:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.407s]    83 | 
+[72.407s]       |   [01;35m[K^[m[K 
+[72.407s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:86:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.407s]    86 |   [01;35m[Kmu[m[Ktable std::atomic_size_t next_stream{};
+[72.407s]       |   [01;35m[K^~[m[K
+[72.407s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:87:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.407s]    87 | };
+[72.407s]       |   [01;35m[K^[m[K 
+[72.407s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:88:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.408s]    88 | 
+[72.408s]       |   [01;35m[K^[m[K 
+[72.408s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/CudaUtils.hpp:90:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.408s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:24:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.408s]    24 |   [01;35m[K  [m[Kconst float* __restrict__ d_input,
+[72.408s]       |   [01;35m[K^[m[K 
+[72.408s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:25:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.408s]    25 |   [01;35m[K  [m[Kfloat* __restrict__ d_detections, // Treated as flat float array
+[72.408s]       |   [01;35m[K^[m[K 
+[72.408s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:26:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.408s]    26 |   [01;35m[K  [m[Kint* __restrict__ d_count,
+[72.408s]       |   [01;35m[K^[m[K 
+[72.408s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:27:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.408s]    27 |   [01;35m[K  [m[Kint N, int C, float CONF_THRESHOLD,
+[72.408s]       |   [01;35m[K^[m[K 
+[72.408s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:28:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.408s]    28 |   [01;35m[K  [m[Kint BoxOffset, int ClassConfOffset, int MaskCoeffOffset)
+[72.408s]       |   [01;35m[K^[m[K 
+[72.408s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:88:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.408s]    88 |   [01;35m[K  [m[K// Map thread indices: x/y for the pixel
+[72.408s]       |   [01;35m[K^[m[K 
+[72.408s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:75:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.408s]    75 | {
+[72.408s]       |   [01;35m[K^[m[K 
+[72.408s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:76:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.408s]    76 |   [01;35m[K  [m[Kreturn 1.0f / (1.0f + __expf(-x));
+[72.408s]       |   [01;35m[K^[m[K 
+[72.408s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:86:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.408s]    86 |   [01;35m[K  [m[Kint mask_w)
+[72.408s]       |   [01;35m[K^[m[K 
+[72.408s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:81:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.408s]    81 |   [01;35m[K  [m[Kcv::cuda::PtrStepSz<const float> d_mask_coeffs, // N detections x 32 coeffs
+[72.408s]       |   [01;35m[K^[m[K 
+[72.408s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:82:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.408s]    82 |   [01;35m[K  [m[Kcv::cuda::PtrStepSz<const float> d_prototypes,  // 32*H*W linear array
+[72.409s]       |   [01;35m[K^[m[K 
+[72.409s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:83:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.409s]    83 |   [01;35m[K  [m[Kcv::cuda::PtrStepSz<float> d_output_masks,      // N detections x H*W output
+[72.409s]       |   [01;35m[K^[m[K 
+[72.409s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:84:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.409s]    84 |   [01;35m[K  [m[Kint N_Detections,
+[72.409s]       |   [01;35m[K^[m[K 
+[72.409s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:85:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.409s]    85 |   [01;35m[K  [m[Kint mask_h,
+[72.409s]       |   [01;35m[K^[m[K 
+[72.409s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:86:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.409s]    86 |   [01;35m[K  [m[Kint mask_w)
+[72.409s]       |   [01;35m[K^[m[K 
+[72.409s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:120:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.409s]   120 |   [01;35m[K  f[m[Kloat gain =
+[72.409s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.409s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:112:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.409s]   112 |   [01;35m[K  T[m[K clamp(const T& val, const T& low, const T& high) {
+[72.409s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.409s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:113:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.409s]   113 |   [01;35m[K  r[m[Keturn std::max(low, std::min(val, high));
+[72.409s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.409s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:114:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.409s]   114 | }
+[72.409s]       |   [01;35m[K^[m[K  
+[72.409s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:115:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.409s]   115 | 
+[72.409s]       |   [01;35m[K^[m[K  
+[72.409s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:117:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.409s]   117 |   [01;35m[K   [m[K                         const cv::Rect& coords,
+[72.409s]       |   [01;35m[K^[m[K  
+[72.409s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:118:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.409s]   118 |   [01;35m[K   [m[K                         const cv::Size& originalShape,
+[72.409s]       |   [01;35m[K^[m[K  
+[72.409s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:119:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.410s]   119 |   [01;35m[K   [m[K                         bool p_Clip = true) {
+[72.410s]       |   [01;35m[K^[m[K  
+[72.410s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:120:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.410s]   120 |   [01;35m[K  f[m[Kloat gain =
+[72.410s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.410s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:121:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.410s]   121 |   [01;35m[K   [m[K   std::min((float)required_shape.height / (float)originalShape.height,
+[72.410s]       |   [01;35m[K^[m[K  
+[72.410s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:125:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.410s]   125 |   [01;35m[K   [m[K   ((float)required_shape.width - (float)originalShape.width * gain) /
+[72.410s]       |   [01;35m[K^[m[K  
+[72.410s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:128:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.410s]   128 |   [01;35m[K   [m[K   ((float)required_shape.height - (float)originalShape.height * gain) /
+[72.410s]       |   [01;35m[K^[m[K  
+[72.410s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:132:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.410s]   132 |   [01;35m[K  r[m[Ket.x =
+[72.410s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.410s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:133:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.410s]   133 |   [01;35m[K   [m[K   static_cast<int>(std::round(((float)coords.x - (float)pad_w) / gain));
+[72.410s]       |   [01;35m[K^[m[K  
+[72.410s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:135:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.410s]   135 |   [01;35m[K   [m[K   static_cast<int>(std::round(((float)coords.y - (float)pad_h) / gain));
+[72.410s]       |   [01;35m[K^[m[K  
+[72.410s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:137:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.410s]   137 |   [01;35m[K  r[m[Ket.height = static_cast<int>(std::round((float)coords.height / gain));
+[72.410s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.410s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:138:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.410s]   138 | 
+[72.410s]       |   [01;35m[K^[m[K  
+[72.410s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:140:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.410s]   140 |   [01;35m[K   [m[K ret.x = clamp(ret.x, 0, originalShape.width);
+[72.410s]       |   [01;35m[K^[m[K  
+[72.410s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:141:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.410s]   141 |   [01;35m[K   [m[K ret.y = clamp(ret.y, 0, originalShape.height);
+[72.410s]       |   [01;35m[K^[m[K  
+[72.410s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:142:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.411s]   142 |   [01;35m[K   [m[K ret.width = clamp(ret.width, 0, originalShape.width - ret.x);
+[72.411s]       |   [01;35m[K^[m[K  
+[72.411s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:143:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.411s]   143 |   [01;35m[K   [m[K ret.height = clamp(ret.height, 0, originalShape.height - ret.y);
+[72.411s]       |   [01;35m[K^[m[K  
+[72.411s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:144:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.411s]   144 |   [01;35m[K  }[m[K
+[72.411s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.411s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:145:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.411s]   145 | 
+[72.411s]       |   [01;35m[K^[m[K  
+[72.411s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:147:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.411s]   147 |   [01;35m[K}[m[K
+[72.411s]       |   [01;35m[K^[m[K  
+[72.411s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:148:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.411s]   148 | 
+[72.411s]       |   [01;35m[K^[m[K  
+[72.411s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:150:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.411s]   150 | na[01;35m[Kmes[m[Kpace internal {
+[72.411s]       |   [01;35m[K^~~[m[K
+[72.411s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:151:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.411s]   151 | 
+[72.411s]       |   [01;35m[K^[m[K  
+[72.411s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:154:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.411s]   154 |   [01;35m[K  c[m[Konst float* d_model_output,
+[72.411s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.411s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:155:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.411s]   155 |   [01;35m[K  c[m[Konst YoloKernelConfig& config,
+[72.411s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.411s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:156:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.411s]   156 |   [01;35m[K  A[m[KlignedYoloDetection* h_output_buffer,
+[72.411s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.411s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:157:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.411s]   157 |   [01;35m[K  A[m[KlignedYoloDetection* d_output_buffer,
+[72.412s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.412s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:158:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.412s]   158 |   [01;35m[K  i[m[Knt* d_count_buffer,
+[72.412s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.412s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:159:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.412s]   159 |   [01;35m[K  i[m[Knt* h_count_buffer,
+[72.412s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.412s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:160:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.412s]   160 |   [01;35m[K  v[m[Koid* stream_ptr)
+[72.412s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.412s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:161:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.412s]   161 | {
+[72.412s]       |   [01;35m[K^[m[K  
+[72.412s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:162:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.412s]   162 |   [01;35m[K  c[m[KudaStream_t stream = static_cast<cudaStream_t>(stream_ptr);
+[72.412s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.412s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:163:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.412s]   163 | 
+[72.412s]       |   [01;35m[K^[m[K  
+[72.412s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:167:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.412s]   167 | 
+[72.412s]       |   [01;35m[K^[m[K  
+[72.412s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:170:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.412s]   170 |   [01;35m[K  c[m[Konst int blocks = (config.num_boxes + threads - 1) / threads;
+[72.412s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.412s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:171:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.412s]   171 | 
+[72.412s]       |   [01;35m[K^[m[K  
+[72.412s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:173:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.412s]   173 |   [01;35m[K   [m[K   d_model_output,
+[72.412s]       |   [01;35m[K^[m[K  
+[72.412s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:185:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.412s]   185 |   [01;35m[K  C[m[KUDA_CHECK(err);
+[72.412s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.413s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:186:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.413s]   186 | 
+[72.413s]       |   [01;35m[K^[m[K  
+[72.413s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:186:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.413s]   186 | 
+[72.413s]       |   [01;35m[K^[m[K  
+[72.413s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:189:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.413s]   189 | 
+[72.413s]       |   [01;35m[K^[m[K  
+[72.413s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:191:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.413s]   191 | }
+[72.413s]       |   [01;35m[K^[m[K  
+[72.413s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:192:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.413s]   192 | 
+[72.413s]       |   [01;35m[K^[m[K  
+[72.413s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:194:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.413s]   194 |   [01;35m[K  c[m[Konst YoloDetectionGpuMatDevice& wrappers,
+[72.413s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.413s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:195:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.413s]   195 |   [01;35m[K  c[m[Konst cv::cuda::GpuMat& d_prototype_masks,
+[72.413s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.413s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:196:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.413s]   196 |   [01;35m[K  c[m[Konst cv::Rect& prototype_crop_rect, // Pre-calculated crop area
+[72.413s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.413s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:197:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.413s]   197 |   [01;35m[K  c[m[Konst AlignedYoloDetection* h_detection,
+[72.413s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.413s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:198:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.413s]   198 |   [01;35m[K  c[m[Konst cv::Size& required_size,
+[72.413s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.413s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:199:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.413s]   199 |   [01;35m[K  c[m[Konst cv::Size& original_size,
+[72.413s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.413s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:200:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.413s]   200 |   [01;35m[K  c[m[Konst std::string& label,
+[72.413s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.414s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:201:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.414s]   201 |   [01;35m[K  c[m[Konst int mask_h,
+[72.414s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.414s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:202:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.414s]   202 |   [01;35m[K  c[m[Konst int mask_w,
+[72.414s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.414s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:203:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.414s]   203 |   [01;35m[K  c[m[Kv::cuda::Stream stream,
+[72.414s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.414s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:204:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.414s]   204 |   [01;35m[K  d[m[Kyno::ObjectDetection& detection)
+[72.414s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.414s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:205:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.414s]   205 | {
+[72.414s]       |   [01;35m[K^[m[K  
+[72.414s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:206:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.414s]   206 |   [01;35m[K  /[m[K/ --- 1. Launch Mask Combination Kernel (Run once for all detections) ---
+[72.414s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.414s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:211:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.414s]   211 |   [01;35m[K  d[m[Kim3 grid(
+[72.414s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.414s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:212:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.414s]   212 |   [01;35m[K   [m[K   (mask_w + block.x - 1) / block.x,
+[72.414s]       |   [01;35m[K^[m[K  
+[72.414s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:217:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.414s]   217 | 
+[72.414s]       |   [01;35m[K^[m[K  
+[72.414s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:219:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.414s]   219 |   [01;35m[K  d[m[K_combined_masks.create(
+[72.414s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.414s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:220:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.414s]   220 |   [01;35m[K   [m[K   mask_h,                         // rows: Treat as a flattened 1D array
+[72.414s]       |   [01;35m[K^[m[K  
+[72.414s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:226:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.414s]   226 |   [01;35m[K   [m[K   "yolov8_detection.post_process.combination_kernel", c_stream, 5);
+[72.414s]       |   [01;35m[K^[m[K  
+[72.415s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:228:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.415s]   228 |   [01;35m[K   [m[K   wrappers.mask_coeffs,
+[72.415s]       |   [01;35m[K^[m[K  
+[72.415s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:234:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.415s]   234 | 
+[72.415s]       |   [01;35m[K^[m[K  
+[72.415s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:237:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.415s]   237 |   [01;35m[K   [m[K   "yolov8_detection.post_process.cv_processing", stream, 5);
+[72.415s]       |   [01;35m[K^[m[K  
+[72.415s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:240:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.415s]   240 |   [01;35m[K   [m[K   original_size, CV_8UC1); // Reusable buffer for final binary mask
+[72.415s]       |   [01;35m[K^[m[K  
+[72.415s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:245:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.415s]   245 |   [01;35m[K  /[m[K/ --- B. Crop to Letterbox Area (GPU Sub-Region) ---
+[72.415s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.415s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:247:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.415s]   247 |   [01;35m[K   [m[K   d_combined_mask_plane(prototype_crop_rect);
+[72.415s]       |   [01;35m[K^[m[K  
+[72.415s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:251:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.415s]   251 |   [01;35m[K  c[m[Kv::cuda::resize(d_cropped_mask, d_resized_mask, original_size,
+[72.415s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.415s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:252:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.415s]   252 |   [01;35m[K   [m[K                   0, 0, cv::INTER_LINEAR, stream);
+[72.415s]       |   [01;35m[K^[m[K  
+[72.415s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:257:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.415s]   257 |   [01;35m[K  c[m[Kv::cuda::threshold(d_resized_mask, d_binary_mask, 0.5, 255.0,
+[72.415s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.415s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:258:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.415s]   258 |   [01;35m[K   [m[K                   cv::THRESH_BINARY, stream);
+[72.415s]       |   [01;35m[K^[m[K  
+[72.415s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:262:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.415s]   262 | 
+[72.415s]       |   [01;35m[K^[m[K  
+[72.415s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:270:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.415s]   270 |   [01;35m[K  c[m[Kv::cuda::GpuMat box_row = wrappers.boxes.row(0);
+[72.415s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.416s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:271:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.416s]   271 |   [01;35m[K  b[m[Kox_row.download(box_data, stream);
+[72.416s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.416s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:272:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.416s]   272 | 
+[72.416s]       |   [01;35m[K^[m[K  
+[72.416s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:274:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.416s]   274 | 
+[72.416s]       |   [01;35m[K^[m[K  
+[72.416s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:277:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.416s]   277 |   [01;35m[K  c[m[Konst float bb_y = box_data.at<float>(1);
+[72.416s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.416s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:278:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.416s]   278 |   [01;35m[K  c[m[Konst float bb_w = box_data.at<float>(2);
+[72.416s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.416s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:279:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.416s]   279 |   [01;35m[K  c[m[Konst float bb_h = box_data.at<float>(3);
+[72.416s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.416s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:280:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.416s]   280 |   [01;35m[K  c[m[Konst cv::Rect box(
+[72.416s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.416s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:281:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.416s]   281 |   [01;35m[K   [m[K   static_cast<int>(std::round(bb_x - bb_w / 2.0f)),
+[72.416s]       |   [01;35m[K^[m[K  
+[72.416s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:291:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.416s]   291 |   [01;35m[K   [m[K       original_size, true); // Assuming this CPU helper exists
+[72.416s]       |   [01;35m[K^[m[K  
+[72.416s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:294:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.416s]   294 |   [01;35m[K  r[m[Koi &= cv::Rect(0, 0, original_size.width, original_size.height);
+[72.416s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.416s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:295:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.416s]   295 | 
+[72.416s]       |   [01;35m[K^[m[K  
+[72.416s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:298:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.416s]   298 | 
+[72.416s]       |   [01;35m[K^[m[K  
+[72.417s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:300:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.417s]   300 |   [01;35m[K   [m[K   // Copy the relevant ROI data from the binary mask into the final
+[72.417s]       |   [01;35m[K^[m[K  
+[72.417s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:303:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.417s]   303 |   [01;35m[K  }[m[K
+[72.417s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.417s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:304:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.417s]   304 | 
+[72.417s]       |   [01;35m[K^[m[K  
+[72.417s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:312:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.417s]   312 |   [01;35m[K  d[m[K_final_masks_full_res.download(final_cpu_mask, stream);
+[72.417s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.417s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:313:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.417s]   313 |   [01;35m[K  /[m[K/ d_final_masks_full_res.download(h_mem, stream);
+[72.417s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.417s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:315:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.417s]   315 | 
+[72.417s]       |   [01;35m[K^[m[K  
+[72.417s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:320:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.417s]   320 |   [01;35m[K  c[m[Konst int class_id = static_cast<int>(h_detection->class_id);
+[72.417s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.417s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:321:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.417s]   321 | 
+[72.417s]       |   [01;35m[K^[m[K  
+[72.417s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:323:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.417s]   323 | 
+[72.417s]       |   [01;35m[K^[m[K  
+[72.417s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:325:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.417s]   325 | 
+[72.417s]       |   [01;35m[K^[m[K  
+[72.417s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:327:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.417s]   327 | } [01;35m[K//d[m[Kyno
+[72.417s]       |   [01;35m[K^~~[m[K
+[72.417s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:329:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.417s] [01m[Ktmpxft_0030131e_00000000-6_YoloV8CudaUtils.compute_90.cudafe1.stub.c:4:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.418s] In file included from [01m[Ktmpxft_0030131e_00000000-6_YoloV8CudaUtils.compute_90.cudafe1.stub.c:1[m[K:
+[72.418s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:24:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.418s]    24 |   [01;35m[K  [m[Kconst float* __restrict__ d_input,
+[72.418s]       |   [01;35m[K^[m[K 
+[72.418s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:30:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.418s]    30 |   [01;35m[K  [m[Kconst int i = blockIdx.x * blockDim.x + threadIdx.x;
+[72.418s]       |   [01;35m[K^[m[K 
+[72.418s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:71:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.418s]    71 | 
+[72.418s]       |   [01;35m[K^[m[K
+[72.418s] [01m[K/tmp/tmpxft_0030131e_00000000-6_YoloV8CudaUtils.compute_90.cudafe1.stub.c:2:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.418s]     2 | #p[01;35m[Kra[m[Kgma GCC diagnostic ignored "-Wunused-function"
+[72.418s]       |   [01;35m[K^~[m[K
+[72.418s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:81:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.418s]    81 |   [01;35m[K  [m[Kcv::cuda::PtrStepSz<const float> d_mask_coeffs, // N detections x 32 coeffs
+[72.418s]       |   [01;35m[K^[m[K 
+[72.418s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:88:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.418s]    88 |   [01;35m[K  /[m[K/ Map thread indices: x/y for the pixel
+[72.418s]       |   [01;35m[K^[m[K [01;35m[K~[m[K
+[72.418s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:110:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[72.418s]   110 | 
+[72.418s]       |   [01;35m[K^[m[K
+[72.418s] [01m[Ktmpxft_0030131e_00000000-6_YoloV8CudaUtils.compute_90.cudafe1.stub.c:2:3:[m[K [01;35m[Kwarning: [m[Kstyle of line directive is a GCC extension
+[74.529s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:[m[K In function ‘[01m[Kint dyno::internal::[01;32m[KYoloOutputToDetections[m[K(const float*, const YoloKernelConfig&, AlignedYoloDetection*, AlignedYoloDetection*, int*, int*, void*)[m[K’:
+[74.529s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/YoloV8CudaUtils.cu:156:1:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kh_output_buffer[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[74.529s]   155 |     cons[01;35m[Kt YoloKernelConfig& config,[m[K
+[74.529s]       |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[74.529s]   156 | [01;35m[K    AlignedYolo[m[KDetection* h_output_buffer,
+[74.529s]       | [01;35m[K^[m[K   [01;35m[K~~~~~~~~~~~[m[K
+[75.599s] [ 62%] [32m[1mLinking CUDA device code CMakeFiles/dynosam_nn.dir/cmake_device_link.o[0m
+[76.203s] [ 66%] [32m[1mLinking CXX shared library libdynosam_nn.so[0m
+[76.726s] [ 66%] Built target dynosam_nn
+[76.785s] [ 70%] [32mBuilding CXX object CMakeFiles/test_nn.dir/nodes/test_nn.cc.o[0m
+[76.788s] [ 75%] [32mBuilding CXX object CMakeFiles/_core.dir/src/bindings/cvnp.cc.o[0m
+[76.790s] [ 79%] [32mBuilding CXX object CMakeFiles/image_segmenter_node.dir/nodes/ImageSegmenterNode.cc.o[0m
+[76.792s] [ 87%] [32mBuilding CXX object CMakeFiles/_core.dir/src/bindings/cvnp_synonyms.cc.o[0m
+[76.792s] [ 87%] [32mBuilding CXX object CMakeFiles/_core.dir/src/bindings/PyBindings.cc.o[0m
+[77.634s] In file included from [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:1[m[K:
+[77.634s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/bindings/cvnp.hpp:[m[K In static member function ‘[01m[Kstatic pybind11::handle pybind11::detail::type_caster<cv::Mat>::[01;32m[Kcast[m[K(const cv::Mat&, pybind11::return_value_policy, pybind11::handle)[m[K’:
+[77.634s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/bindings/cvnp.hpp:106:68:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kdefval[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[77.634s]   106 |   static handle cast(const cv::Mat &m, return_value_policy, [01;35m[Khandle defval[m[K) {
+[77.634s]       |                                                             [01;35m[K~~~~~~~^~~~~~[m[K
+[77.636s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp_synonyms.cc:[m[K In function ‘[01m[Kstd::string cvnp::[01;32m[Kalign_center[m[K(const std::string&)[m[K’:
+[77.636s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp_synonyms.cc:31:28:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::__cxx11::basic_string<char>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+[77.636s]    31 |   int nb_spaces = [01;35m[Ks.size() < sColumnWidth[m[K ? sColumnWidth - s.size() : 0;
+[77.636s]       |                   [01;35m[K~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[77.636s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:[m[K In member function ‘[01m[Kvirtual cv::UMatData* cvnp::detail::CvnpAllocator::[01;32m[Kallocate[m[K(int, const int*, int, void*, size_t*, cv::AccessFlag, cv::UMatUsageFlags) const[m[K’:
+[77.636s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:43:30:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kdims0[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[77.636s]    43 |   cv::UMatData* allocate([01;35m[Kint dims0[m[K, const int* sizes, int type, void* data,
+[77.636s]       |                          [01;35m[K~~~~^~~~~[m[K
+[77.636s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:43:48:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksizes[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[77.636s]    43 |   cv::UMatData* allocate(int dims0, [01;35m[Kconst int* sizes[m[K, int type, void* data,
+[77.636s]       |                                     [01;35m[K~~~~~~~~~~~^~~~~[m[K
+[77.636s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:43:59:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktype[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[77.636s]    43 |   cv::UMatData* allocate(int dims0, const int* sizes, [01;35m[Kint type[m[K, void* data,
+[77.636s]       |                                                       [01;35m[K~~~~^~~~[m[K
+[77.636s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:43:71:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kdata[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[77.636s]    43 |   cv::UMatData* allocate(int dims0, const int* sizes, int type, [01;35m[Kvoid* data[m[K,
+[77.636s]       |                                                                 [01;35m[K~~~~~~^~~~[m[K
+[77.636s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:44:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kstep[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[77.636s]    44 |                          [01;35m[Ksize_t* step[m[K, cv::AccessFlag flags,
+[77.637s]       |                          [01;35m[K~~~~~~~~^~~~[m[K
+[77.637s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:44:55:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kflags[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[77.637s]    44 |                          size_t* step, [01;35m[Kcv::AccessFlag flags[m[K,
+[77.637s]       |                                        [01;35m[K~~~~~~~~~~~~~~~^~~~~[m[K
+[77.637s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:45:45:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KusageFlags[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[77.637s]    45 |                          [01;35m[Kcv::UMatUsageFlags usageFlags[m[K) const override {
+[77.637s]       |                          [01;35m[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~~[m[K
+[77.637s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:[m[K In member function ‘[01m[Kvirtual bool cvnp::detail::CvnpAllocator::[01;32m[Kallocate[m[K(cv::UMatData*, cv::AccessFlag, cv::UMatUsageFlags) const[m[K’:
+[77.637s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:52:31:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ku[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[77.637s]    52 |   bool allocate([01;35m[Kcv::UMatData* u[m[K, cv::AccessFlag accessFlags,
+[77.637s]       |                 [01;35m[K~~~~~~~~~~~~~~^[m[K
+[77.637s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:52:49:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KaccessFlags[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[77.637s]    52 |   bool allocate(cv::UMatData* u, [01;35m[Kcv::AccessFlag accessFlags[m[K,
+[77.637s]       |                                  [01;35m[K~~~~~~~~~~~~~~~^~~~~~~~~~~[m[K
+[77.637s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:53:36:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KusageFlags[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[77.637s]    53 |                 [01;35m[Kcv::UMatUsageFlags usageFlags[m[K) const override {
+[77.637s]       |                 [01;35m[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~~[m[K
+[77.640s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:[m[K In function ‘[01m[Kcv::Mat cvnp::[01;32m[Knparray_to_mat_with_strides_broken[m[K(pybind11::array&)[m[K’:
+[77.640s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:198:12:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Ksize[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+[77.640s]   198 |   cv::Size [01;35m[Ksize[m[K = detail::determine_cv_size(a);
+[77.640s]       |            [01;35m[K^~~~[m[K
+[77.640s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/cvnp.cc:207:7:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kndims[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[77.640s]   207 |   int [01;35m[Kndims[m[K = static_cast<int>(buffer_info.ndim);
+[77.640s]       |       [01;35m[K^~~~~[m[K
+[80.460s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/nodes/test_nn.cc:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[80.460s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/nodes/test_nn.cc:8:14:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargc[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[80.460s]     8 | int main([01;35m[Kint argc[m[K, char* argv[]) {
+[80.460s]       |          [01;35m[K~~~~^~~~[m[K
+[80.460s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/nodes/test_nn.cc:8:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargv[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[80.460s]     8 | int main(int argc, [01;35m[Kchar* argv[][m[K) {
+[80.460s]       |                    [01;35m[K~~~~~~^~~~~~[m[K
+[80.876s] In file included from [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/PyBindings.cc:14[m[K:
+[80.876s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/bindings/cvnp.hpp:[m[K In static member function ‘[01m[Kstatic pybind11::handle pybind11::detail::type_caster<cv::Mat>::[01;32m[Kcast[m[K(const cv::Mat&, pybind11::return_value_policy, pybind11::handle)[m[K’:
+[80.876s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/bindings/cvnp.hpp:106:68:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kdefval[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[80.876s]   106 |   static handle cast(const cv::Mat &m, return_value_policy, [01;35m[Khandle defval[m[K) {
+[80.876s]       |                                                             [01;35m[K~~~~~~~^~~~~~[m[K
+[81.337s] [ 91%] [32m[1mLinking CXX executable test_nn[0m
+[81.525s] /home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/bindings/cvnp.hpp: In instantiation of ‘[01m[Kstatic pybind11::handle pybind11::detail::type_caster<cv::Rect_<_Tp> >::[01;32m[Kcast[m[K(const RectTp&, pybind11::return_value_policy, pybind11::handle) [35m[K[with _Tp = int; RectTp = cv::Rect_<int>][m[K[m[K’:
+[81.525s] [01m[K/usr/include/pybind11/pybind11.h:253:40:[m[K   required from ‘[01m[Kvoid pybind11::cpp_function::[01;32m[Kinitialize[m[K(Func&&, Return (*)(Args ...), const Extra& ...) [35m[K[with Func = pybind11::class_<dyno::ObjectDetection>::def_readwrite<dyno::ObjectDetection, cv::Rect_<int> >(const char*, cv::Rect_<int> dyno::ObjectDetection::*)::<lambda(const pybind11::class_<dyno::ObjectDetection>::type&)>; Return = const cv::Rect_<int>&; Args = {const dyno::ObjectDetection&}; Extra = {pybind11::is_method}][m[K[m[K’
+[81.525s] [01m[K/usr/include/pybind11/pybind11.h:102:19:[m[K   required from ‘[01m[Kpybind11::cpp_function::[01;32m[Kcpp_function[m[K(Func&&, const Extra& ...) [35m[K[with Func = pybind11::class_<dyno::ObjectDetection>::def_readwrite<dyno::ObjectDetection, cv::Rect_<int> >(const char*, cv::Rect_<int> dyno::ObjectDetection::*)::<lambda(const pybind11::class_<dyno::ObjectDetection>::type&)>; Extra = {pybind11::is_method}; <template-parameter-1-3> = void][m[K[m[K’
+[81.525s] [01m[K/usr/include/pybind11/pybind11.h:1673:22:[m[K   required from ‘[01m[Kpybind11::class_<type_, options>& pybind11::class_<type_, options>::[01;32m[Kdef_readwrite[m[K(const char*, D C::*, const Extra& ...) [35m[K[with C = dyno::ObjectDetection; D = cv::Rect_<int>; Extra = {}; type_ = dyno::ObjectDetection; options = {}][m[K[m[K’
+[81.525s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/src/bindings/PyBindings.cc:76:21:[m[K   required from here
+[81.525s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/bindings/cvnp.hpp:387:71:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kdefval[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[81.525s]   387 |   static handle cast(const RectTp &value, return_value_policy, [01;35m[Khandle defval[m[K) {
+[81.526s]       |                                                                [01;35m[K~~~~~~~^~~~~~[m[K
+[81.587s] [ 91%] Built target test_nn
+[81.961s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/nodes/ImageSegmenterNode.cc:[m[K In member function ‘[01m[Kvirtual void Logger::[01;32m[Klog[m[K(nvinfer1::ILogger::Severity, const char*)[m[K’:
+[81.961s] [01m[K/home/user/dev_ws/src/core/dynosam_nn/nodes/ImageSegmenterNode.cc:24:21:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kseverity[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[81.961s]    24 |   void log([01;35m[KSeverity severity[m[K, const char* msg) noexcept override {
+[81.961s]       |            [01;35m[K~~~~~~~~~^~~~~~~~[m[K
+[82.908s] [ 95%] [32m[1mLinking CXX shared module _core.cpython-312-x86_64-linux-gnu.so[0m
+[85.374s] [ 95%] Built target _core
+[85.901s] [100%] [32m[1mLinking CXX executable image_segmenter_node[0m
+[86.525s] /usr/bin/ld: warning: libopencv_core.so.406, needed by /opt/ros/kilted/lib/libcv_bridge.so, may conflict with libopencv_core.so.410
+[86.958s] [100%] Built target image_segmenter_node
+[86.963s] Invoked command in '/home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/dev_ws/install/rgbd_publisher_pkg:/opt/ros/kilted _=/usr/bin/env /usr/local/bin/cmake --build /home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn -- -j20 -l20
+[86.966s] Invoking command in '/home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/dev_ws/install/rgbd_publisher_pkg:/opt/ros/kilted _=/usr/bin/env /usr/local/bin/cmake --install /home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn
+[86.969s] -- Install configuration: ""
+[86.969s] -- Execute custom install script
+[86.969s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/CudaUtils.hpp
+[86.972s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/ModelConfig.hpp
+[86.974s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/ObjectDetector.hpp
+[86.976s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/PyObjectDetector.hpp
+[86.978s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/TrtUtilities.hpp
+[86.980s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp
+[86.982s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/YoloV8ObjectDetector.hpp
+[86.984s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/bindings/PyBoostWrapper.hpp
+[86.986s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/bindings/cvnp.hpp
+[86.988s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/bindings/cvnp_synonyms.hpp
+[86.990s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/trackers/ObjectTracker.hpp
+[86.992s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/trackers/byte_tracker/ByteTracker.hpp
+[86.994s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/trackers/byte_tracker/KalmanFilter.hpp
+[86.996s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/trackers/byte_tracker/README.md
+[86.998s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/trackers/byte_tracker/Rect.hpp
+[86.999s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/trackers/byte_tracker/STrack.hpp
+[87.001s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/trackers/byte_tracker/lapjv.hpp
+[87.003s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/weights/.gitignore
+[87.005s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/resources/coco.names
+[87.007s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/library_path.sh
+[87.009s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/library_path.dsv
+[87.012s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/dynosam_nn/test_nn
+[87.014s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/dynosam_nn/image_segmenter_node
+[87.016s] -- Symlinking: /dynosam_nn_py/_core.cpython-312-x86_64-linux-gnu.so
+[87.018s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/pythonpath.sh
+[87.019s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/pythonpath.dsv
+[87.022s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py-0.0.1-py3.12.egg-info/PKG-INFO
+[87.023s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py-0.0.1-py3.12.egg-info/SOURCES.txt
+[87.025s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py-0.0.1-py3.12.egg-info/dependency_links.txt
+[87.027s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py-0.0.1-py3.12.egg-info/top_level.txt
+[87.029s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py/__init__.py
+[87.031s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py/object_detection.py
+[87.033s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py/test.py
+[87.035s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/ament_index/resource_index/package_run_dependencies/dynosam_nn
+[87.037s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/ament_index/resource_index/parent_prefix_path/dynosam_nn
+[87.039s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/ament_prefix_path.sh
+[87.041s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/ament_prefix_path.dsv
+[87.043s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/path.sh
+[87.045s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/path.dsv
+[87.047s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/local_setup.bash
+[87.048s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/local_setup.sh
+[87.050s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/local_setup.zsh
+[87.052s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/local_setup.dsv
+[87.054s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/package.dsv
+[87.056s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/ament_index/resource_index/packages/dynosam_nn
+[87.058s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/ConfigExtras.cmake
+[87.059s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/ament_cmake_export_targets-extras.cmake
+[87.061s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/ament_cmake_export_include_directories-extras.cmake
+[87.063s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/ament_cmake_export_dependencies-extras.cmake
+[87.065s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/dynosam_nnConfig.cmake
+[87.066s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/dynosam_nnConfig-version.cmake
+[87.068s] -- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/package.xml
+[87.070s] -- Installing: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/libdynosam_nn.so
+[87.075s] -- Set runtime path of "/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/libdynosam_nn.so" to ""
+[87.099s] Listing '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py'...
+[87.099s] Compiling '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py/__init__.py'...
+[87.099s] Compiling '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py/object_detection.py'...
+[87.099s] Compiling '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py/test.py'...
+[87.103s] -- Installing: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/export_dynosam_nnExport.cmake
+[87.103s] -- Installing: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/export_dynosam_nnExport-noconfig.cmake
+[87.104s] Invoked command in '/home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/dev_ws/install/rgbd_publisher_pkg:/opt/ros/kilted _=/usr/bin/env /usr/local/bin/cmake --install /home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn

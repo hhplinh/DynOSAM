@@ -1,0 +1,14 @@
+source;share/dynosam_nn/hook/cmake_prefix_path.ps1
+source;share/dynosam_nn/hook/cmake_prefix_path.dsv
+source;share/dynosam_nn/hook/cmake_prefix_path.sh
+source;share/dynosam_nn/hook/ld_library_path_lib.ps1
+source;share/dynosam_nn/hook/ld_library_path_lib.dsv
+source;share/dynosam_nn/hook/ld_library_path_lib.sh
+source;share/dynosam_nn/hook/pythonpath.ps1
+source;share/dynosam_nn/hook/pythonpath.dsv
+source;share/dynosam_nn/hook/pythonpath.sh
+source;share/dynosam_nn/local_setup.bash
+source;share/dynosam_nn/local_setup.dsv
+source;share/dynosam_nn/local_setup.ps1
+source;share/dynosam_nn/local_setup.sh
+source;share/dynosam_nn/local_setup.zsh

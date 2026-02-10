@@ -1,0 +1,1 @@
+/home/user/dev_ws/src/core/dynosam_nn/include/dynosam_nn/YoloV8ObjectDetector.hpp

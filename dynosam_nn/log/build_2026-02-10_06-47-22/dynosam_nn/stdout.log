@@ -1,0 +1,190 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- The CUDA compiler identification is NVIDIA 12.6.85
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Found MPI_C: /opt/hpcx/ompi/lib/libmpi.so (found version "3.1") 
+-- Found MPI_CXX: /opt/hpcx/ompi/lib/libmpi.so (found version "3.1") 
+-- Found MPI: TRUE (found version "3.1")  
+-- Found dynosam_common: 0.0.1 (/home/user/dev_ws/install/dynosam_common/share/dynosam_common/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rosidl_generator_c: 4.9.6 (/opt/ros/kilted/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.9.6 (/opt/ros/kilted/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.8.2 (/opt/ros/kilted/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 9.3.3 (/opt/ros/kilted/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found CUDA: /usr/local/cuda (found suitable exact version "12.6") 
+-- Found flann version 1.9.2
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5") found components: CXX 
+-- Checking for module 'libusb-1.0'
+--   Found libusb-1.0, version 1.0.27
+-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Could NOT find Pcap (missing: PCAP_LIBRARIES PCAP_INCLUDE_DIRS) 
+-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.3.#define ZLIB_VERSION "1.3"") 
+-- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.43") 
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Found Qhull version 8.0.2
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+-- Found PCL_2D: /usr/include/pcl-1.14  
+-- Found PCL_GEOMETRY: /usr/include/pcl-1.14  
+-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  
+-- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  
+-- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  
+-- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  
+-- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  
+-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  
+-- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  
+-- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  
+-- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  
+-- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  
+-- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  
+-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.14  
+-- Found PCL_MODELER: /usr/include/pcl-1.14  
+-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.14  
+-- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  
+-- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  
+-- GTSAM include directory:  /usr/local/lib/cmake/GTSAM/../../../include
+-- Found dynosam_cv: 0.0.1 (/home/user/dev_ws/install/dynosam_cv/share/dynosam_cv/cmake)
+-- Found cv_bridge: 4.1.0 (/opt/ros/kilted/share/cv_bridge/cmake)
+-- Performing Test HAS_FLTO
+-- Performing Test HAS_FLTO - Success
+-- Found pybind11: /usr/include (found version "2.11.1")
+-- Found Python3: /usr/bin/python3 (found suitable version "3.12.3", minimum required is "3.10") found components: Interpreter Development Development.Module Development.Embed 
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: python3 numpy3 
+-- Found image_transport: 6.1.3 (/opt/ros/kilted/share/image_transport/cmake)
+-- Found CUDAToolkit: /usr/local/cuda/include (found version "12.6.85") 
+-- Found TensorRT: /usr/lib/x86_64-linux-gnu/libnvinfer.so (found version "10.6.0.26") found components: onnxparser infer_plugin 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/user/dev_ws/src/core/dynosam_nn/build/dynosam_nn
+[  4%] Built target ament_cmake_python_symlink_dynosam_nn_py
+[  4%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/YoloV8ObjectDetector.cc.o[0m
+[  8%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/ModelConfig.cc.o[0m
+[ 12%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/trackers/ObjectTracker.cc.o[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/TrtUtilities.cc.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/trackers/byte_tracker/Rect.cc.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/PyObjectDetector.cc.o[0m
+[ 29%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/CudaUtils.cc.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/trackers/byte_tracker/KalmanFilter.cc.o[0m
+[ 37%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/trackers/byte_tracker/STrack.cc.o[0m
+[ 41%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/bindings/PyBoostWrapper.cc.o[0m
+[ 45%] [32mBuilding CUDA object CMakeFiles/dynosam_nn.dir/src/YoloV8CudaUtils.cu.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/ObjectDetector.cc.o[0m
+[ 54%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/trackers/byte_tracker/ByteTracker.cc.o[0m
+[ 58%] [32mBuilding CXX object CMakeFiles/dynosam_nn.dir/src/trackers/byte_tracker/lapjv.cc.o[0m
+running egg_info
+creating dynosam_nn_py.egg-info
+writing dynosam_nn_py.egg-info/PKG-INFO
+writing dependency_links to dynosam_nn_py.egg-info/dependency_links.txt
+writing top-level names to dynosam_nn_py.egg-info/top_level.txt
+writing manifest file 'dynosam_nn_py.egg-info/SOURCES.txt'
+reading manifest file 'dynosam_nn_py.egg-info/SOURCES.txt'
+writing manifest file 'dynosam_nn_py.egg-info/SOURCES.txt'
+[ 58%] Built target ament_cmake_python_build_dynosam_nn_py_egg
+[ 62%] [32m[1mLinking CUDA device code CMakeFiles/dynosam_nn.dir/cmake_device_link.o[0m
+[ 66%] [32m[1mLinking CXX shared library libdynosam_nn.so[0m
+[ 66%] Built target dynosam_nn
+[ 70%] [32mBuilding CXX object CMakeFiles/test_nn.dir/nodes/test_nn.cc.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/_core.dir/src/bindings/cvnp.cc.o[0m
+[ 79%] [32mBuilding CXX object CMakeFiles/image_segmenter_node.dir/nodes/ImageSegmenterNode.cc.o[0m
+[ 87%] [32mBuilding CXX object CMakeFiles/_core.dir/src/bindings/cvnp_synonyms.cc.o[0m
+[ 87%] [32mBuilding CXX object CMakeFiles/_core.dir/src/bindings/PyBindings.cc.o[0m
+[ 91%] [32m[1mLinking CXX executable test_nn[0m
+[ 91%] Built target test_nn
+[ 95%] [32m[1mLinking CXX shared module _core.cpython-312-x86_64-linux-gnu.so[0m
+[ 95%] Built target _core
+[100%] [32m[1mLinking CXX executable image_segmenter_node[0m
+[100%] Built target image_segmenter_node
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/CudaUtils.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/ModelConfig.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/ObjectDetector.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/PyObjectDetector.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/TrtUtilities.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/YoloV8CudaUtils.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/YoloV8ObjectDetector.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/bindings/PyBoostWrapper.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/bindings/cvnp.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/bindings/cvnp_synonyms.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/trackers/ObjectTracker.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/trackers/byte_tracker/ByteTracker.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/trackers/byte_tracker/KalmanFilter.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/trackers/byte_tracker/README.md
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/trackers/byte_tracker/Rect.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/trackers/byte_tracker/STrack.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/include/dynosam_nn/trackers/byte_tracker/lapjv.hpp
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/weights/.gitignore
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/resources/coco.names
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/library_path.sh
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/library_path.dsv
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/dynosam_nn/test_nn
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/dynosam_nn/image_segmenter_node
+-- Symlinking: /dynosam_nn_py/_core.cpython-312-x86_64-linux-gnu.so
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/pythonpath.sh
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/pythonpath.dsv
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py-0.0.1-py3.12.egg-info/PKG-INFO
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py-0.0.1-py3.12.egg-info/SOURCES.txt
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py-0.0.1-py3.12.egg-info/dependency_links.txt
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py-0.0.1-py3.12.egg-info/top_level.txt
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py/__init__.py
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py/object_detection.py
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py/test.py
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/ament_index/resource_index/package_run_dependencies/dynosam_nn
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/ament_index/resource_index/parent_prefix_path/dynosam_nn
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/ament_prefix_path.sh
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/ament_prefix_path.dsv
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/path.sh
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/environment/path.dsv
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/local_setup.bash
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/local_setup.sh
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/local_setup.zsh
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/local_setup.dsv
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/package.dsv
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/ament_index/resource_index/packages/dynosam_nn
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/ConfigExtras.cmake
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/ament_cmake_export_targets-extras.cmake
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/dynosam_nnConfig.cmake
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/dynosam_nnConfig-version.cmake
+-- Symlinking: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/package.xml
+-- Installing: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/libdynosam_nn.so
+-- Set runtime path of "/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/libdynosam_nn.so" to ""
+Listing '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py'...
+Compiling '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py/__init__.py'...
+Compiling '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py/object_detection.py'...
+Compiling '/home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/lib/python3.12/site-packages/dynosam_nn_py/test.py'...
+-- Installing: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/export_dynosam_nnExport.cmake
+-- Installing: /home/user/dev_ws/src/core/dynosam_nn/install/dynosam_nn/share/dynosam_nn/cmake/export_dynosam_nnExport-noconfig.cmake
