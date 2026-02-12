@@ -1,6 +1,5 @@
-cd dynosam_pkg/DynoSAM/docker &&
+cd docker &&
 ./build_docker_amd64.sh //
-
 
 ./create_container_amd64.sh //
 

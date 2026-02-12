@@ -4,7 +4,7 @@
 FROM rwthika/ros2-torch:kilted-desktop-full-torch2.5.0
 
 
-MAINTAINER Jesse Morris "jesse.morris@sydney.edu.au"
+LABEL maintainer="Jesse Morris <jesse.morris@sydney.edu.au>"
 
 
 # To avoid tzdata asking for geographic location...
@@ -33,8 +33,8 @@ RUN apt-get update \
 
 # Prefer system OpenMPI to avoid stale MPI paths from other toolchains.
 ENV MPI_HOME=/usr/lib/x86_64-linux-gnu/openmpi
-ENV CMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/openmpi:${CMAKE_PREFIX_PATH}
-ENV PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/x86_64-linux-gnu/openmpi/lib/pkgconfig:${PKG_CONFIG_PATH}
+ENV CMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/openmpi
+ENV PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/x86_64-linux-gnu/openmpi/lib/pkgconfig
 
 # ROS installs
 RUN apt-get update && apt-get install -y \
