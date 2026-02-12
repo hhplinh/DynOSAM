@@ -112,6 +112,8 @@ if "$USE_NVIDIA"; then
         --privileged \
         --gpus all \
         -i -d \
+        --env NVIDIA_VISIBLE_DEVICES=all \
+        --env NVIDIA_DRIVER_CAPABILITIES=all \
         --volume $XSOCK:$XSOCK:rw \
         -v $LOCAL_DATA_FOLDER:$CONTAINER_DATA_FOLDER \
         -v $LOCAL_RESULTS_FOLDER:$CONTAINER_RESULTS_FOLDER \

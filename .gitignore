@@ -84,3 +84,9 @@ CATKIN_IGNORE
 
 # Avoid overwriting user specific arguments
 docker/create_containers.sh
+
+*build*/
+
+*.tar.gz
+
+*log*/

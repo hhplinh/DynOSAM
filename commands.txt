@@ -158,6 +158,20 @@ if __name__ == '__main__':
 
 
 --
+rm -rf /home/user/dev_ws/build/dynosam_nn/ament_cmake_python/dynosam_nn_py/dynosam_nn_py
+colcon build --packages-select dynosam_nn --symlink-install --allow-overriding dynosam_nn
+
+source /home/user/dev_ws/install/setup.bash
+python3 -c "import dynosam_nn_py._core; print('ok')"
+
+--
+
+python3 -m pip cache remove "tensorrt*"
+python3 -m pip install --upgrade tensorrt tensorrt-lean tensorrt-dispatch
+
+
+dpkg -l | grep TensorRT
+---
 
 # in home/user/dev_ws
 colcon build --packages-select rgbd_publisher_pkg
@@ -167,6 +181,8 @@ source install/setup.bash
 ros2 run rgbd_publisher_pkg rgbd_publisher
 
 
+
+
 ----
 
 source install/setup.bash
@@ -174,7 +190,7 @@ source install/setup.bash
 
 ros2 launch dynosam_ros dyno_sam_launch.py \
   params_path:=/home/user/dev_ws/src/core/dynosam/params/ \
-  dataset_path:=/root/data/sequences/00 \
+  dataset_path:=/root/data/ \
   v:=1 \
   data_provider_type:=3 \
   output_path:=/root/results
@@ -315,3 +331,44 @@ chmod +x depth-anything
 
 ./depth-anything data/frames --model depth-anything/DA3-SMALL
 
+---
+./docker/create_container_base.sh dyno_sam_local dyno_sam2 \
+  /path/on/host/data \
+  /path/on/host/results \
+  /path/on/host/DynoSAM \
+  /path/on/host/third_parties
+
+
+
+-----
+# Fix OpenMPI error
+# Install OpenMPI rootless
+
+mkdir -p ~/openmpi-source
+cd ~/openmpi-source
+
+wget https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.6.tar.gz
+tar -xvf openmpi-4.1.6.tar.gz
+cd openmpi-4.1.6
+
+
+source ~/.bashrc
+
+cd ~/openmpi-source/openmpi-4.1.6
+
+./configure --prefix=$HOME/openmpi \
+            --with-cuda=/usr/local/cuda \
+            --enable-mpi-cxx \
+            --with-wrapper-cflags="-I/usr/local/cuda/include" \
+            --with-wrapper-ldflags="-L/usr/local/cuda/lib64"
+
+make -j$(nproc)
+make install
+
+which mpicc
+
+export MPI_C_COMPILER=/home/huynh.ha.phuong.linh/openmpi/bin/mpicc
+
+export MPI_CXX_COMPILER=/home/huynh.ha.phuong.linh/openmpi/bin/mpicxx
+
+colcon build

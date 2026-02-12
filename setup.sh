@@ -202,6 +202,12 @@ PY_CODE
 echo ">>> [DOCKER] Rebuilding workspace..."
 colcon build --packages-select rgbd_publisher_pkg
 
+rm -rf /home/user/dev_ws/build/dynosam_nn/ament_cmake_python/dynosam_nn_py/dynosam_nn_py
+colcon build --packages-select dynosam_nn --symlink-install --allow-overriding dynosam_nn
+
+source /home/user/dev_ws/install/setup.bash
+python3 -c "import dynosam_nn_py._core; print('ok')"
+
 echo ">>> [DOCKER] SETUP COMPLETE."
 EOF
 
