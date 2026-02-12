@@ -4,7 +4,7 @@
 FROM rwthika/ros2-torch:kilted-desktop-full-torch2.5.0
 
 
-LABEL maintainer="Jesse Morris <jesse.morris@sydney.edu.au>"
+MAINTAINER Jesse Morris "jesse.morris@sydney.edu.au"
 
 
 # To avoid tzdata asking for geographic location...
@@ -21,20 +21,19 @@ RUN apt-get update && apt-get install -y xvfb
 RUN apt-get update \
     && apt-get install -y \
     python3-pip \
-    openmpi-bin \
-    libopenmpi-dev \
     openssh-client \
     software-properties-common \
+    tree \
     nano \
     vim \
     clang-format \
+    build-essential \
+    openmpi-bin \
+    openmpi-common \
+    libopenmpi-dev \
+    ssh \
     && pip3 install black pre-commit \
     && rm -rf /var/lib/apt/lists/*
-
-# Prefer system OpenMPI to avoid stale MPI paths from other toolchains.
-ENV MPI_HOME=/usr/lib/x86_64-linux-gnu/openmpi
-ENV CMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/openmpi
-ENV PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/x86_64-linux-gnu/openmpi/lib/pkgconfig
 
 # ROS installs
 RUN apt-get update && apt-get install -y \
@@ -89,7 +88,7 @@ RUN cd opencv/build && \
       -D WITH_CUDA=ON \
       -D WITH_CUDNN=ON \
       -D INSTALL_CUDA_LIBS=OFF \
-      -D CMAKE_CUDA_ARCHITECTURES="9.0" \
+      -D CMAKE_CUDA_ARCHITECTURES="75" \
       -D OPENCV_DNN_CUDA=ON \
       -D ENABLE_FAST_MATH=ON \
       -D CUDA_FAST_MATH=ON \
