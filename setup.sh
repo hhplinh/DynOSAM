@@ -83,6 +83,24 @@ setup(
 PY_SETUP
 
 # 4. Write the Node Code (rgbd_publisher.py)
+
+unset OPENMPI_VERSION
+unset OMPI_MCA_coll_hcoll_enable
+unset OPAL_PREFIX
+export PATH=$(echo $PATH | tr ':' '\n' | grep -v '/opt/hpcx' | grep -v '/usr/local/mpi/bin' | paste -sd:)
+
+sudo apt update
+sudo apt install libopenmpi-dev openmpi-bin
+
+which mpicc
+mpicc --version
+
+rm -rf build/ install/ log/
+
+export MPI_C_COMPILER=/usr/bin/mpicc
+export MPI_CXX_COMPILER=/usr/bin/mpicxx
+colcon build
+
 echo ">>> [DOCKER] Writing rgbd_publisher.py..."
 # Ensure directory exists just in case
 mkdir -p src/rgbd_publisher_pkg/rgbd_publisher_pkg/
